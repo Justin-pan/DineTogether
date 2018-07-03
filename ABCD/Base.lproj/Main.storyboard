@@ -239,6 +239,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-kR-dvP">
+                                <rect key="frame" x="337" y="33" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <action selector="addPostsTouch:" destination="r6j-vG-W7p" eventType="touchUpInside" id="u9Z-0S-R4t"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -255,7 +264,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-905" y="-8"/>
+            <point key="canvasLocation" x="-906.39999999999998" y="-8.5457271364317844"/>
         </scene>
     </scenes>
     <resources>
@@ -265,7 +274,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="occ-Ho-MYk"/>
-        <segue reference="6mG-rD-rwz"/>
+        <segue reference="f1V-C4-cuP"/>
         <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>
 </document>

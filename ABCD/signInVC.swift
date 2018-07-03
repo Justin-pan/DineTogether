@@ -63,7 +63,6 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
         if (error == nil) {
-            
             // Perform any operations on signed in user here.
             userInfo.shared.userId = user.userID                  // For client-side use only!
             userInfo.shared.idToken = user.authentication.idToken // Safe to send to the server
@@ -84,7 +83,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ThirdViewController"{
-            var vc = segue.destination as! ThirdViewController
+            _ = segue.destination as! ThirdViewController
         }
     }
 }
