@@ -9,7 +9,18 @@
 import UIKit
 import GoogleSignIn
 import SafariServices
-class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate{
+
+class userInfo {
+    static let shared = userInfo()
+    var userId : String = ""                  // For client-side use only!
+    var idToken : String = "" // Safe to send to the server
+    var fullName : String = ""
+    var givenName : String = ""
+    var familyName : String = ""
+    var email : String = ""
+}
+
+class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate {
     var email: String = ""
     var givenName: String = ""
     var familyName: String = ""
@@ -54,12 +65,12 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
         if (error == nil) {
             
             // Perform any operations on signed in user here.
-            let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken // Safe to send to the server
-            let fullName = user.profile.name
-            givenName = user.profile.givenName
-            familyName = user.profile.familyName
-            email = user.profile.email
+            userInfo.shared.userId = user.userID                  // For client-side use only!
+            userInfo.shared.idToken = user.authentication.idToken // Safe to send to the server
+            userInfo.shared.fullName = user.profile.name
+            userInfo.shared.givenName = user.profile.givenName
+            userInfo.shared.familyName = user.profile.familyName
+            userInfo.shared.email = user.profile.email
             self.performSegue(withIdentifier: "ThirdViewController", sender: self)
         } else {
             print("\(error.localizedDescription)")
@@ -74,9 +85,6 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ThirdViewController"{
             var vc = segue.destination as! ThirdViewController
-            vc.email = email
-            vc.familyName = familyName
-            vc.givenName = givenName
         }
     }
 }

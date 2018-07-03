@@ -60,12 +60,12 @@
                     </view>
                     <connections>
                         <outlet property="SignOutButton" destination="aNW-0r-aOK" id="mFw-7c-h9U"/>
-                        <segue destination="qCU-9y-ZQZ" kind="show" identifier="ThirdViewController" id="zK6-tV-fme"/>
+                        <segue destination="qCU-9y-ZQZ" kind="show" identifier="ThirdViewController" id="f1V-C4-cuP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="-110.19490254872565"/>
+            <point key="canvasLocation" x="630" y="-797"/>
         </scene>
         <!--Messages-->
         <scene sceneID="ggz-ov-Bbs">
@@ -78,11 +78,56 @@
                     <view key="view" contentMode="scaleToFill" id="3VP-yU-LZx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eae-Ra-wTK">
+                                <rect key="frame" x="16" y="629" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Posts"/>
+                                <connections>
+                                    <segue destination="r6j-vG-W7p" kind="show" id="hgq-HQ-UlS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hRn-m2-JK6">
+                                <rect key="frame" x="315" y="629" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <segue destination="qCU-9y-ZQZ" kind="show" id="JMI-mi-uJ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXk-d1-uKE">
+                                <rect key="frame" x="152" y="629" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Messages"/>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Messages" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kHX-RQ-Rlf">
+                                <rect key="frame" x="16" y="20" width="162" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="XO0-bY-QFW" appends="YES" id="8hf-5f-E5I"/>
+                            <outletCollection property="gestureRecognizers" destination="xKE-xL-QOb" appends="YES" id="GEt-p7-apd"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Messages" image="messages1" id="Z6Y-Wa-Q8l"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkS-et-fyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="XO0-bY-QFW">
+                    <connections>
+                        <segue destination="r6j-vG-W7p" kind="show" id="SMB-pQ-heA"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="xKE-xL-QOb">
+                    <connections>
+                        <segue destination="qCU-9y-ZQZ" kind="show" id="3aY-Fw-aUa"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-180" y="787"/>
         </scene>
@@ -98,15 +143,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clI-Ft-997">
-                                <rect key="frame" x="70" y="28" width="180" height="165"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyn-SS-oWK">
+                                <rect key="frame" x="16" y="629" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Posts"/>
+                                <connections>
+                                    <segue destination="r6j-vG-W7p" kind="show" id="occ-Ho-MYk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNE-FO-PnN">
+                                <rect key="frame" x="315" y="629" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaK-YH-vyW">
+                                <rect key="frame" x="152" y="629" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Messages"/>
+                                <connections>
+                                    <segue destination="dBG-8c-CaO" kind="show" id="Jmx-cQ-dSl"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Profile" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-c2-f39">
+                                <rect key="frame" x="16" y="20" width="108" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clI-Ft-997">
+                                <rect key="frame" x="16" y="71" width="343" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="184-wW-r62" appends="YES" id="jjk-KP-jHK"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile1" id="Nf7-Rk-IGV"/>
                     <connections>
@@ -114,8 +191,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTy-5L-TBT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="184-wW-r62">
+                    <connections>
+                        <segue destination="dBG-8c-CaO" kind="show" id="CjP-lC-slY"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="532" y="786.65667166416802"/>
+            <point key="canvasLocation" x="629.60000000000002" y="-8.5457271364317844"/>
         </scene>
         <!--Posts-->
         <scene sceneID="IzP-Ok-tJQ">
@@ -128,32 +210,52 @@
                     <view key="view" contentMode="scaleToFill" id="fVE-Yl-SwW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzC-QD-HgP">
+                                <rect key="frame" x="16" y="629" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Posts"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-3f-SFd">
+                                <rect key="frame" x="315" y="629" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Profile"/>
+                                <connections>
+                                    <segue destination="qCU-9y-ZQZ" kind="show" id="6mG-rD-rwz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fwi-fS-KlX">
+                                <rect key="frame" x="152" y="629" width="70" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Messages"/>
+                                <connections>
+                                    <segue destination="dBG-8c-CaO" kind="show" id="dd3-nO-y2b"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Posts" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RmV-Nd-h9k">
+                                <rect key="frame" x="16" y="20" width="97" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9YV-H3-hqI" appends="YES" id="BlE-uu-PqF"/>
+                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Posts" image="posts1" id="0H1-8q-OMO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LWv-hh-d85" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-983" y="787"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="nXP-Q5-bui">
-            <objects>
-                <tabBarController id="QcQ-E2-45F" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="soE-aY-TES">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
+                <swipeGestureRecognizer direction="left" id="9YV-H3-hqI">
                     <connections>
-                        <segue destination="r6j-vG-W7p" kind="relationship" relationship="viewControllers" id="bFH-sz-aeK"/>
-                        <segue destination="dBG-8c-CaO" kind="relationship" relationship="viewControllers" id="QJB-NL-UIn"/>
-                        <segue destination="qCU-9y-ZQZ" kind="relationship" relationship="viewControllers" id="QHc-JX-UlX"/>
+                        <segue destination="dBG-8c-CaO" kind="show" id="270-Wr-Ie9"/>
                     </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oWm-hK-xzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-180" y="7"/>
+            <point key="canvasLocation" x="-905" y="-8"/>
         </scene>
     </scenes>
     <resources>
@@ -162,6 +264,8 @@
         <image name="profile1" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zK6-tV-fme"/>
+        <segue reference="occ-Ho-MYk"/>
+        <segue reference="6mG-rD-rwz"/>
+        <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>
 </document>
