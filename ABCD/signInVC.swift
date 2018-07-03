@@ -70,6 +70,11 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
             userInfo.shared.givenName = user.profile.givenName
             userInfo.shared.familyName = user.profile.familyName
             userInfo.shared.email = user.profile.email
+            getPosts(){(error) in
+                if let error = error{
+                    fatalError(error.localizedDescription)
+                }
+            }
             self.performSegue(withIdentifier: "ThirdViewController", sender: self)
         } else {
             print("\(error.localizedDescription)")

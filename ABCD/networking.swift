@@ -29,19 +29,15 @@ enum Result<Value> {
 }
 
 //function for getting posts with HTTP get request
-func getPosts(for userId: String, completion: ((Error?) -> Void)?) {
+func getPosts(completion: ((Error?) -> Void)?) {
     //Creating the url which will be used for the GET request
     var urlComponents = URLComponents()
     //request scheme
     urlComponents.scheme = "https"
     //request host
-    urlComponents.host = "jsonplaceholder.typicode.com"
+    urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
     //request path
-    urlComponents.path = "/posts"
-    //the query for in the url for the get request, in the order of the original query string, name-value pair
-    let userIdItem = URLQueryItem(name: "email", value: "\(userId)")
-    //urls query items
-    urlComponents.queryItems = [userIdItem]
+    urlComponents.path = "/test"
     //create the url, guard used for maintainability, transfers program control out of scope if conditions not met
     guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
     
@@ -75,7 +71,7 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
     //request scheme
     urlComponents.scheme = "https"
     //request host
-    urlComponents.host = "jsonplaceholder.typicode.com"
+    urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
     //request path
     urlComponents.path = "/posts"
     //create the url, guard used for maintainability, transfers program control out of scope if conditions not met
@@ -133,4 +129,68 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
         }
     }
     task.resume()
+}
+func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
+    //Creating the url which will be used for the GET request
+    var urlComponents = URLComponents()
+    //request scheme
+    urlComponents.scheme = "https"
+    //request host
+    urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
+    //request path
+    urlComponents.path = "/signin"
+    //create the url, guard used for maintainability, transfers program control out of scope if conditions not met
+    guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+    //create post request with the created url
+    var request = URLRequest(url: url)
+    //post http method
+    request.httpMethod = "POST"
+    //request headers
+    var headers = request.allHTTPHeaderFields ?? [:]
+    //header is Content-Type and application/json
+    headers["Content-Type"] = "application/json"
+    //the request made has these headers/
+    //these headers will let the server know that the request body is JSON encoded
+    request.allHTTPHeaderFields = headers
+    //instantiating the encoder
+    let encoder = JSONEncoder()
+    do{
+        let jsonData = try encoder.encode(user)
+        request.httpBody = jsonData
+        //set httprequest body
+        print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        
+    }catch{
+        completion(.failure(error))
+    }
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    //URL session data task with the request made
+    let task = session.dataTask(with: request){(responseData, response, responseError) in
+        DispatchQueue.main.async {
+            if let error = responseError {
+                completion(.failure(error))
+            } else if let jsonData = responseData {
+                // Now we have jsonData, Data representation of the JSON returned to us
+                // from our URLRequest...
+                
+                // Create an instance of JSONDecoder to decode the JSON data to our
+                // Codable struct
+                let decoder = JSONDecoder()
+                
+                do {
+                    // We would use Post.self for JSON representing a single Post
+                    // object, and [Post].self for JSON representing an array of
+                    // Post objects
+                    let posts = try decoder.decode(User.self, from: jsonData)
+                    completion(.success(posts))
+                } catch {
+                    completion(.failure(error))
+                }
+            } else {
+                let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                completion(.failure(error))
+            }
+        }
+    }
 }
