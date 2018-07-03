@@ -11,13 +11,13 @@ import Foundation
 struct User: Codable{
     let userEmail : String
     let userName: String
-    
+    let description: String
 }
 
 struct Posting: Codable{
     let userEmail: String
-    let userName: String
-    let time: String
+    let time: Int
+    let distance: Int
     let latitude: Double
     let longitude: Double
 }
@@ -193,4 +193,5 @@ func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
             }
         }
     }
+    task.resume()
 }

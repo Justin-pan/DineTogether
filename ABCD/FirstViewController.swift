@@ -10,22 +10,17 @@ import UIKit
 import CoreLocation
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate{
+    var posts = [Posting]()
+    var locationManager = CLLocationManager()
+    var userLocation: CLLocation!
     func inputDialog(){
         let alert = UIAlertController(title: "Posting details", message: "Please choose how long you are willing to wait from now and a distance at which others can see your post", preferredStyle: .alert)
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(action: UIAlertAction) in})
         let saveAction = UIAlertAction(title:"Done", style: .default, handler: {(action: UIAlertAction) in
-            let date = Date()
-            let calendar = Calendar.current
-            var hour = calendar.component(.hour, from: date)
-            var minutes = calendar.component(.minute, from: date)
             let time = alert.textFields![0].text
             let distance = alert.textFields![0].text
-            var nextTime = (Int(time!)! + minutes)
-            if(nextTime > 60){
-                hour += 1
-                nextTime = nextTime % 60
-            }
-            print("Time of post expiry is: \(hour):\(nextTime) and distance is \(distance)")
+            let myPost = Posting(userEmail: userInfo.shared.email, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
+            print(myPost)
         })
         alert.addTextField(configurationHandler: {(textField) in
             textField.placeholder = "Time in minutes"
@@ -56,7 +51,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         // Dispose of any resources that can be recreated.
     }
     @IBAction func addPostsTouch(_ sender: Any) {
-        print("button has been pressed")
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
         inputDialog()
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -66,5 +64,22 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         }
         return true
     }
-}
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.userLocation = locations.last!
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        if let clErr = error as? CLError {
+            switch clErr {
+            case CLError.locationUnknown:
+                print("location unknown")
+            case CLError.denied:
+                print("denied")
+            default:
+                print("other Core Location error")
+            }
+        } else {
+            print("other error:", error.localizedDescription)
+        }
+    }
 
+}
