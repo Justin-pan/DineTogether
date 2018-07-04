@@ -17,6 +17,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     var posts = [Posting]()
     var locationManager = CLLocationManager()
     var userLocation: CLLocation!
+    var Action = UIAlertAction.self
+    var actionString: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -54,7 +56,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         let row = indexPath.row
         
         let alert = UIAlertController(title: "Posting by \(posts[row].email)",
-                                      message: "Distance: \(posts[row].distance)\n Time: \(posts[row].time)\n",
+                                      message: "Distance: \(posts[row].distance) KM\n Time: \(posts[row].time)\n",
                                       preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: nil))
@@ -70,11 +72,17 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         //creating the alert controller
         let alert = UIAlertController(title: "Posting details", message: "Please choose how long you are willing to wait from now and a distance at which others can see your post", preferredStyle: .alert)
         //actions to be done in the alert controller
-        let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(action: UIAlertAction) in})
-        let saveAction = UIAlertAction(title:"Done", style: .default, handler: {(action: UIAlertAction) in
+        let cancelAction = Action.init(title: "Cancel", style: .default, handler: {(Action) -> Void in
+            self.actionString = "Cancel"
+        })
+        let saveAction = Action.init(title:"Done", style: .default, handler: {(Action) -> Void in
+            self.actionString = "Done"
             //creating the posting and formatting and such
             let time = alert.textFields![0].text
             let distance = alert.textFields![1].text
+            /*if(Int(time!) == nil || Int(distance!) == nil){
+                
+            }*/
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
