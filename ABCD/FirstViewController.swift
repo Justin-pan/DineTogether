@@ -80,7 +80,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
             let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
             let formattedNewDate = formatter.string(from: newDate!)
-            let myPost = Posting(_id: "", email: userInfo.shared.email, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
+            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
             //submitting the post
             submitPost(post: myPost) {(result) in
