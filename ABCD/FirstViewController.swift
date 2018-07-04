@@ -9,14 +9,70 @@
 import UIKit
 import CoreLocation
 
-class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate{
+class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
+
+    // setup for table
+    @IBOutlet var tableView: UITableView!
+    let textCellIdentifier = "TextCell"
     var posts = [Posting]()
     var locationManager = CLLocationManager()
     var userLocation: CLLocation!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        
+        // setup for table
+        tableView.delegate = self
+        tableView.dataSource = self
+    }
+    
+    // posting list width in UI
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // posting list length in UI
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return posts.count
+    }
+    
+    // populate cells
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
+        
+        let row = indexPath.row
+        cell.textLabel?.text = posts[row].email
+        
+        return cell
+    }
+    
+    // cell tapped
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let row = indexPath.row
+        
+        let alert = UIAlertController(title: "Posting by \(posts[row].email)",
+                                      message: "Distance: \(posts[row].distance)\n Time: \(posts[row].time)\n",
+                                      preferredStyle: UIAlertControllerStyle.alert)
+        
+        alert.addAction(UIAlertAction(title: "Message", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+        print(posts[row])
+    }
+    
+    //input dialog for creating posts
     func inputDialog(){
+        //creating the alert controller
         let alert = UIAlertController(title: "Posting details", message: "Please choose how long you are willing to wait from now and a distance at which others can see your post", preferredStyle: .alert)
+        //actions to be done in the alert controller
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(action: UIAlertAction) in})
         let saveAction = UIAlertAction(title:"Done", style: .default, handler: {(action: UIAlertAction) in
+            //creating the posting and formatting and such
             let time = alert.textFields![0].text
             let distance = alert.textFields![1].text
             let date = Date()
@@ -26,57 +82,53 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             let formattedNewDate = formatter.string(from: newDate!)
             let myPost = Posting(_id: "", email: userInfo.shared.email, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
-            submitPost(post: myPost){(result) in
+            //submitting the post
+            submitPost(post: myPost) {(result) in
                 switch result{
                 case .success(let posts):
                     self.posts = posts
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                     print(posts)
                 case.failure(let error):
                     fatalError("error: \(error)")
                 }
             }
+            
         })
+        //disable saveaction until its only ints in the text dialogs
+        saveAction.isEnabled = false
         alert.addTextField(configurationHandler: {(textField) in
             textField.placeholder = "Time in minutes"
             textField.keyboardType = .numberPad
+            //check when this changes for whether or not the text is int
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInPostAlert), for: .editingChanged)
         })
+        
         alert.addTextField(configurationHandler: {(textField) in
             textField.placeholder = "Distance in kilometers"
             textField.keyboardType = .numberPad
+            //check when this changes for whether or not the text is int
+            textField.addTarget(alert, action: #selector(alert.textDidChangeInPostAlert), for: .editingChanged)
         })
-        let textField1 = alert.textFields?.first
-        let textField2 = alert.textFields?.last
-        textField1?.delegate = self
-        textField2?.delegate = self
+        //adding all the actions
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         self.present(alert, animated: true, completion: nil)
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func addPostsTouch(_ sender: Any) {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         inputDialog()
-    }
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if textField.text != "" || string != "" {
-            let res = (textField.text ?? "") + string
-            return Int(res) != nil
-        }
-        return true
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         self.userLocation = locations.last!
@@ -95,5 +147,22 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             print("other error:", error.localizedDescription)
         }
     }
-
+}
+extension UIAlertController{
+    func isValidLocation(_ location: String) -> Bool{
+        //return whether or not the textfield holds int
+        return location.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 && Int(location) != nil
+    }
+    func isValidTime(_ time: String) -> Bool{
+        //return whether or not the textfield holds int
+        return time.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 && Int(time) != nil
+    }
+    func textDidChangeInPostAlert(){
+        if let time = textFields?[0].text,
+        let location = textFields?[1].text,
+        let action = actions.first{
+            //sets save action to whether or not both of these have ints
+            action.isEnabled = isValidLocation(location) && isValidTime(time)
+        }
+    }
 }
