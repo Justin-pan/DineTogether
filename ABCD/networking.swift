@@ -18,6 +18,7 @@ struct User: Codable{
 struct Posting: Codable{
     let _id : String
     let email: String
+    let fullName: String
     let time: String
     let distance: Int
     let latitude: Double
