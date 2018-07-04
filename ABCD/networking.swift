@@ -9,14 +9,16 @@
 import Foundation
 
 struct User: Codable{
-    let userEmail : String
-    let userName: String
+    let _id : String
+    let email : String
+    let fullName: String
     let description: String
 }
 
 struct Posting: Codable{
-    let userEmail: String
-    let time: Int
+    let _id : String
+    let email: String
+    let time: String
     let distance: Int
     let latitude: Double
     let longitude: Double
@@ -73,7 +75,7 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
     //request host
     urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
     //request path
-    urlComponents.path = "/posts"
+    urlComponents.path = "/makePost"
     //create the url, guard used for maintainability, transfers program control out of scope if conditions not met
     guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
     //create post request with the created url
@@ -102,7 +104,6 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
     let session = URLSession(configuration: config)
     //URL session data task with the request made
     let task = session.dataTask(with: request){ (responseData, response, responseError) in
-        DispatchQueue.main.async {
             if let error = responseError {
                 completion?(.failure(error))
             } else if let jsonData = responseData {
@@ -120,6 +121,9 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
                     let posts = try decoder.decode([Posting].self, from: jsonData)
                     completion?(.success(posts))
                 } catch {
+                    if let data = responseData, let str = String(data: data, encoding: String.Encoding.utf8){
+                        print("Print Server data:- " + str)
+                    }
                     completion?(.failure(error))
                 }
             } else {
@@ -127,10 +131,11 @@ func submitPost(post: Posting, completion: ((Result<[Posting]>) -> Void)?) {
                 completion?(.failure(error))
             }
         }
-    }
     task.resume()
-}
-func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
+    }
+
+
+func signInUser(user: User, completion: ((Result<User>) -> Void)?){
     //Creating the url which will be used for the GET request
     var urlComponents = URLComponents()
     //request scheme
@@ -161,7 +166,7 @@ func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
         print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
         
     }catch{
-        completion(.failure(error))
+        completion?(.failure(error))
     }
     let config = URLSessionConfiguration.default
     let session = URLSession(configuration: config)
@@ -169,7 +174,7 @@ func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
     let task = session.dataTask(with: request){(responseData, response, responseError) in
         DispatchQueue.main.async {
             if let error = responseError {
-                completion(.failure(error))
+                completion?(.failure(error))
             } else if let jsonData = responseData {
                 // Now we have jsonData, Data representation of the JSON returned to us
                 // from our URLRequest...
@@ -183,13 +188,13 @@ func signInUser(user: User, completion: @escaping ((Result<User>) -> Void?)){
                     // object, and [Post].self for JSON representing an array of
                     // Post objects
                     let posts = try decoder.decode(User.self, from: jsonData)
-                    completion(.success(posts))
+                    completion?(.success(posts))
                 } catch {
-                    completion(.failure(error))
+                    completion?(.failure(error))
                 }
             } else {
                 let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
-                completion(.failure(error))
+                completion?(.failure(error))
             }
         }
     }

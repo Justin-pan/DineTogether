@@ -18,9 +18,23 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: {(action: UIAlertAction) in})
         let saveAction = UIAlertAction(title:"Done", style: .default, handler: {(action: UIAlertAction) in
             let time = alert.textFields![0].text
-            let distance = alert.textFields![0].text
-            let myPost = Posting(userEmail: userInfo.shared.email, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
+            let distance = alert.textFields![1].text
+            let date = Date()
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
+            let formattedNewDate = formatter.string(from: newDate!)
+            let myPost = Posting(_id: "", email: userInfo.shared.email, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
+            submitPost(post: myPost){(result) in
+                switch result{
+                case .success(let posts):
+                    self.posts = posts
+                    print(posts)
+                case.failure(let error):
+                    fatalError("error: \(error)")
+                }
+            }
         })
         alert.addTextField(configurationHandler: {(textField) in
             textField.placeholder = "Time in minutes"

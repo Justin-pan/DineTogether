@@ -24,6 +24,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     var email: String = ""
     var givenName: String = ""
     var familyName: String = ""
+    var userSign = [User]()
     @IBOutlet weak var SignOutButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,9 +71,14 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
             userInfo.shared.givenName = user.profile.givenName
             userInfo.shared.familyName = user.profile.familyName
             userInfo.shared.email = user.profile.email
-            getPosts(){(error) in
-                if let error = error{
-                    fatalError(error.localizedDescription)
+            let user = User(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, description: "")
+            signInUser(user: user){(result) in
+                switch result{
+                case .success(let userSign):
+                    self.userSign = [userSign]
+                    print(userSign)
+                case .failure(let error):
+                    fatalError("error: \(error.localizedDescription)")
                 }
             }
             self.performSegue(withIdentifier: "ThirdViewController", sender: self)
