@@ -25,7 +25,8 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     var givenName: String = ""
     var familyName: String = ""
     var userSign = [User]()
-    @IBOutlet weak var SignOutButton: UIButton!
+ 
+    @IBOutlet weak var SignInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -41,6 +42,9 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
         controller.delegate = self
         //controller.dismiss(animated: true, completion: nil)
         GIDSignIn.sharedInstance().signOut()
+        self.SignInButton.setTitle("Sign In",for: .normal)
+  
+        
     }
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
         controller.dismiss(animated: true, completion: nil)
@@ -77,6 +81,8 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                 case .success(let userSign):
                     self.userSign = [userSign]
                     print(userSign)
+                    self.SignInButton.setTitle("Proceed",for: .normal)
+                    
                 case .failure(let error):
                     fatalError("error: \(error.localizedDescription)")
                 }

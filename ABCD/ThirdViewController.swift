@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import GoogleSignIn
+import SafariServices
 
-class ThirdViewController: UIViewController {
+class ThirdViewController: UIViewController,SFSafariViewControllerDelegate {
     
+    @IBOutlet weak var SignOutButton: UIButton!
     @IBOutlet weak var userName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +24,21 @@ class ThirdViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func logout(_ sender: Any) {
+                self.performSegue(withIdentifier: "signInVC", sender:SignOutButton  )
+//      let url = URL(string: "https://www.google.com/accounts/Logout")!
+//      let controller = SFSafariViewController(url: url)
+//      self.present(controller, animated: true, completion: nil)
+//      controller.delegate = self
+//      controller.dismiss(animated: true, completion: nil)
+        GIDSignIn.sharedInstance().signOut()
+
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "signInVC"{
+            _ = segue.destination as! ViewController
+        }
+    }
 
 }
-
 
