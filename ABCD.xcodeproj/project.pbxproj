@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0637AF1B89BF87DB07B4C690 /* Pods_ABCDTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F6D9C93FEF1CB35184ED3B1 /* Pods_ABCDTests.framework */; };
 		22DA09DDA8B063E0D186AA15 /* Pods_ABCD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE59A25B2DE66A575102C8FA /* Pods_ABCD.framework */; };
-		52F031E120F841F800219483 /* socket.io-client-swift-master in Resources */ = {isa = PBXBuildFile; fileRef = 52F031E020F841F800219483 /* socket.io-client-swift-master */; };
 		8125A13AC80056B68F05DE17 /* Pods_ABCDUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0ED6BFB321E961B575F204B /* Pods_ABCDUITests.framework */; };
 		9080D8DC20E99855009951F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080D8DB20E99855009951F4 /* AppDelegate.swift */; };
 		9080D8DE20E99855009951F4 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080D8DD20E99855009951F4 /* signInVC.swift */; };
@@ -51,7 +50,6 @@
 
 /* Begin PBXFileReference section */
 		3D4D1A602B85F4541F5BCE4C /* Pods-ABCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCD/Pods-ABCD.release.xcconfig"; sourceTree = "<group>"; };
-		52F031E020F841F800219483 /* socket.io-client-swift-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "socket.io-client-swift-master"; sourceTree = "<group>"; };
 		6D632047E8A2C70D2FB2ABE3 /* Pods-ABCDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCDUITests/Pods-ABCDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		9080D8D820E99855009951F4 /* ABCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9080D8DB20E99855009951F4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,7 +189,6 @@
 		9080D90920E9A579009951F4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52F031E020F841F800219483 /* socket.io-client-swift-master */,
 				90FCF2F420E9CC6B005D0395 /* GoogleSignIn.framework */,
 				90FCF2F520E9CC6B005D0395 /* GoogleSignInDependencies.framework */,
 				90FCF2F620E9CC6B005D0395 /* GoogleAppUtilities.framework */,
@@ -338,7 +335,6 @@
 				90FCF2F320E9CC58005D0395 /* GoogleSignIn.bundle in Resources */,
 				9080D8E620E99855009951F4 /* LaunchScreen.storyboard in Resources */,
 				9080D8E320E99855009951F4 /* Assets.xcassets in Resources */,
-				52F031E120F841F800219483 /* socket.io-client-swift-master in Resources */,
 				9080D8E120E99855009951F4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,7 +605,10 @@
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)";
 				INFOPLIST_FILE = ABCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "$(OTHER_LDFLAGS) -ObjC";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = raadbro.ABCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -628,7 +627,10 @@
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)";
 				INFOPLIST_FILE = ABCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "$(OTHER_LDFLAGS) -ObjC";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = raadbro.ABCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
