@@ -154,6 +154,8 @@
 			isa = PBXGroup;
 			children = (
 				9080D8DD20E99855009951F4 /* signInVC.swift */,
+				5DD09CCF20F71FED00976B06 /* SegueLeft.swift */,
+				5DD09CD120F7200700976B06 /* SegueRight.swift */,
 				9080D8DB20E99855009951F4 /* AppDelegate.swift */,
 				90E7904420EAE493001DEF7D /* FirstViewController.swift */,
 				C97860CD20EB2E8500D5F9DD /* networking.swift */,
@@ -440,6 +442,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E7904920EAE4D7001DEF7D /* ThirdViewController.swift in Sources */,
+				5DD09CD020F71FED00976B06 /* SegueLeft.swift in Sources */,
+				5DD09CD220F7200700976B06 /* SegueRight.swift in Sources */,
 				C97860CE20EB2E8500D5F9DD /* networking.swift in Sources */,
 				90E7904720EAE4BD001DEF7D /* SecondViewController.swift in Sources */,
 				90E7904520EAE493001DEF7D /* FirstViewController.swift in Sources */,
