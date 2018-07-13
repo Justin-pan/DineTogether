@@ -165,7 +165,7 @@ extension UIAlertController{
         //return whether or not the textfield holds int
         return time.trimmingCharacters(in: .whitespacesAndNewlines).count > 0 && Int(time) != nil
     }
-    func textDidChangeInPostAlert(){
+    @objc func textDidChangeInPostAlert(){
         if let time = textFields?[0].text,
         let location = textFields?[1].text,
         let action = actions.first{

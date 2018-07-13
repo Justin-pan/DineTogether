@@ -1,4 +1,4 @@
-framework module Pods_ABCD {
+module Pods_ABCD {
   umbrella header "Pods-ABCD-umbrella.h"
 
   export *

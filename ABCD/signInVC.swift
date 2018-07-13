@@ -10,6 +10,7 @@ import UIKit
 import GoogleSignIn
 import SafariServices
 
+
 class userInfo {
     static let shared = userInfo()
     var userId : String = ""                  // For client-side use only!

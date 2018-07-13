@@ -1,6 +1,0 @@
-framework module Pods_ABCDTests {
-  umbrella header "Pods-ABCDTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
