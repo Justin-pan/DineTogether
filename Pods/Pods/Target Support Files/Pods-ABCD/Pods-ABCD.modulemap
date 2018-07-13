@@ -1,0 +1,6 @@
+module Pods_ABCD {
+  umbrella header "Pods-ABCD-umbrella.h"
+
+  export *
+  module * { export * }
+}

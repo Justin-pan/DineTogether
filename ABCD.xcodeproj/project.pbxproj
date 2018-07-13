@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52790F4620F85DFC004E42F6 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		52E637C020F85AF900D171B0 /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52790F4620F85DFC004E42F6 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52E637C020F85AF900D171B0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5D75BE3F20F86C9A00352DB1 /* SegueLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75BE3E20F86C9A00352DB1 /* SegueLeft.swift */; };
+		5D75BE4120F86CA100352DB1 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75BE4020F86CA100352DB1 /* SegueRight.swift */; };
 		625153344F404BDF0FF6682A /* libPods-ABCDUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 13C7C47ADA6822BA33D6443C /* libPods-ABCDUITests.a */; };
 		78F413B6A5DACB62051C0E33 /* libPods-ABCD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9F210D0DBFF528670CC226E /* libPods-ABCD.a */; };
 		9080D8DC20E99855009951F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080D8DB20E99855009951F4 /* AppDelegate.swift */; };
@@ -57,8 +59,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				52790F4620F85DFC004E42F6 /* BuildFile in Embed Frameworks */,
-				52E637C020F85AF900D171B0 /* BuildFile in Embed Frameworks */,
+				52790F4620F85DFC004E42F6 /* (null) in Embed Frameworks */,
+				52E637C020F85AF900D171B0 /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +77,8 @@
 		52790F4120F85DD8004E42F6 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52790F4320F85DDD004E42F6 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B75771DDB00DB4EC80B9EA9 /* Pods-ABCDTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCDTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCDTests/Pods-ABCDTests.release.xcconfig"; sourceTree = "<group>"; };
+		5D75BE3E20F86C9A00352DB1 /* SegueLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueLeft.swift; path = "../../../Downloads/DineTogether-master/ABCD/SegueLeft.swift"; sourceTree = "<group>"; };
+		5D75BE4020F86CA100352DB1 /* SegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SegueRight.swift; path = "../../../Downloads/DineTogether-master/ABCD/SegueRight.swift"; sourceTree = "<group>"; };
 		7CCB692C17C8BBCF4B00595F /* Pods-ABCDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCDUITests/Pods-ABCDUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8A0A229ABD5F5E7E23291D5A /* Pods-ABCDUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCDUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCDUITests/Pods-ABCDUITests.release.xcconfig"; sourceTree = "<group>"; };
 		9080D8D820E99855009951F4 /* ABCD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABCD.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,10 +190,12 @@
 		9080D8DA20E99855009951F4 /* ABCD */ = {
 			isa = PBXGroup;
 			children = (
-				9080D8DD20E99855009951F4 /* signInVC.swift */,
 				9080D8DB20E99855009951F4 /* AppDelegate.swift */,
-				90E7904420EAE493001DEF7D /* FirstViewController.swift */,
 				C97860CD20EB2E8500D5F9DD /* networking.swift */,
+				5D75BE3E20F86C9A00352DB1 /* SegueLeft.swift */,
+				5D75BE4020F86CA100352DB1 /* SegueRight.swift */,
+				9080D8DD20E99855009951F4 /* signInVC.swift */,
+				90E7904420EAE493001DEF7D /* FirstViewController.swift */,
 				90E7904620EAE4BD001DEF7D /* SecondViewController.swift */,
 				90E7904820EAE4D7001DEF7D /* ThirdViewController.swift */,
 				9080D8DF20E99855009951F4 /* Main.storyboard */,
@@ -462,6 +468,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				90E7904920EAE4D7001DEF7D /* ThirdViewController.swift in Sources */,
+				5D75BE3F20F86C9A00352DB1 /* SegueLeft.swift in Sources */,
+				5D75BE4120F86CA100352DB1 /* SegueRight.swift in Sources */,
 				C97860CE20EB2E8500D5F9DD /* networking.swift in Sources */,
 				90E7904720EAE4BD001DEF7D /* SecondViewController.swift in Sources */,
 				90E7904520EAE493001DEF7D /* FirstViewController.swift in Sources */,
@@ -627,7 +635,10 @@
 				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(SRCROOT)";
 				INFOPLIST_FILE = ABCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "$(OTHER_LDFLAGS) -ObjC";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = raadbro.ABCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -643,10 +654,17 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
-				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) $(PROJECT_DIR) $(PROJECT_DIR)/MessageKit";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/MessageKit",
+				);
 				INFOPLIST_FILE = ABCD/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "$(OTHER_LDFLAGS) -ObjC";
+				"OTHER_LDFLAGS[arch=*]" = (
+					"$(OTHER_LDFLAGS)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = raadbro.ABCD;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

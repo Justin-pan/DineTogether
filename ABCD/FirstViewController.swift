@@ -45,7 +45,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = posts[row].email
+        cell.textLabel?.text = posts[row].fullName
+        cell.detailTextLabel?.text = "Time: " + String(posts[row].time)
         
         return cell
     }
@@ -77,12 +78,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         })
         let saveAction = Action.init(title:"Done", style: .default, handler: {(Action) -> Void in
             self.actionString = "Done"
+            
             //creating the posting and formatting and such
             let time = alert.textFields![0].text
             let distance = alert.textFields![1].text
-            /*if(Int(time!) == nil || Int(distance!) == nil){
-                
-            }*/
             let date = Date()
             let formatter = DateFormatter()
             formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
@@ -90,6 +89,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             let formattedNewDate = formatter.string(from: newDate!)
             let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
+            
             //submitting the post
             submitPost(post: myPost) {(result) in
                 switch result{
