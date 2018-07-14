@@ -32,6 +32,7 @@
 		A70E185020F8790A00D90F4C /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E184F20F8790A00D90F4C /* SegueRight.swift */; };
 		A70E185220F8796800D90F4C /* ControllerUnderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70E185120F8796800D90F4C /* ControllerUnderTest.swift */; };
 		A749560C20ED862B004F6EAD /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749560B20ED862B004F6EAD /* ViewControllerTests.swift */; };
+		A77F7E5920FAA8F700AC446D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77F7E5820FAA8F700AC446D /* Message.swift */; };
 		A7B8266E20F97AD900E8AB8A /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B8266D20F97AD900E8AB8A /* ChatViewController.swift */; };
 		C97860CE20EB2E8500D5F9DD /* networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97860CD20EB2E8500D5F9DD /* networking.swift */; };
 		FBCB1EA2799216071710671A /* libPods-ABCDTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DA4E7B9CBCEA4974CE25D2D /* libPods-ABCDTests.a */; };
@@ -115,6 +116,7 @@
 		A70E184F20F8790A00D90F4C /* SegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueRight.swift; sourceTree = "<group>"; };
 		A70E185120F8796800D90F4C /* ControllerUnderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerUnderTest.swift; sourceTree = "<group>"; };
 		A749560B20ED862B004F6EAD /* ViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
+		A77F7E5820FAA8F700AC446D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		A7B8266D20F97AD900E8AB8A /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B9F210D0DBFF528670CC226E /* libPods-ABCD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ABCD.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C97860CD20EB2E8500D5F9DD /* networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networking.swift; sourceTree = "<group>"; };
@@ -201,6 +203,7 @@
 				9080D8DD20E99855009951F4 /* signInVC.swift */,
 				90E7904420EAE493001DEF7D /* FirstViewController.swift */,
 				A7B8266D20F97AD900E8AB8A /* ChatViewController.swift */,
+				A77F7E5820FAA8F700AC446D /* Message.swift */,
 				90E7904620EAE4BD001DEF7D /* SecondViewController.swift */,
 				90E7904820EAE4D7001DEF7D /* ThirdViewController.swift */,
 				9080D8DF20E99855009951F4 /* Main.storyboard */,
@@ -480,6 +483,7 @@
 				90E7904720EAE4BD001DEF7D /* SecondViewController.swift in Sources */,
 				90E7904520EAE493001DEF7D /* FirstViewController.swift in Sources */,
 				9080D8DE20E99855009951F4 /* signInVC.swift in Sources */,
+				A77F7E5920FAA8F700AC446D /* Message.swift in Sources */,
 				A7B8266E20F97AD900E8AB8A /* ChatViewController.swift in Sources */,
 				9080D8DC20E99855009951F4 /* AppDelegate.swift in Sources */,
 			);
