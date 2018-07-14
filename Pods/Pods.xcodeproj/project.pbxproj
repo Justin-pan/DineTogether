@@ -40,16 +40,6 @@
 		52862039266B475A8D2BDE9FD34EE999 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E7B4129A4C7C3652697760028C7AD09 /* Starscream-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		534BF059724311720A9DBD27F9C3A242 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D879B045A14932A9D6E3DEE9AED6923 /* Socket.IO-Client-Swift-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		582C8F9365DA91F4488E2628744E297F /* UIEdgeInsets+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009EF651EC0E2B045DF46DCE6AE47689 /* UIEdgeInsets+Extensions.swift */; };
-		5D9D9A2A20F86BD2009BB456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D993F20F86BD1009BB456 /* AppDelegate.swift */; };
-		5D9D9A2B20F86BD2009BB456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994520F86BD1009BB456 /* FirstViewController.swift */; };
-		5D9D9A2C20F86BD2009BB456 /* networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994720F86BD1009BB456 /* networking.swift */; };
-		5D9D9A2D20F86BD2009BB456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994820F86BD1009BB456 /* SecondViewController.swift */; };
-		5D9D9A2E20F86BD2009BB456 /* SegueLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994920F86BD1009BB456 /* SegueLeft.swift */; };
-		5D9D9A2F20F86BD2009BB456 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994A20F86BD1009BB456 /* SegueRight.swift */; };
-		5D9D9A3020F86BD2009BB456 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994B20F86BD1009BB456 /* signInVC.swift */; };
-		5D9D9A3120F86BD2009BB456 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D994C20F86BD1009BB456 /* ThirdViewController.swift */; };
-		5D9D9A3220F86BD2009BB456 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D994D20F86BD1009BB456 /* GoogleAppUtilities.framework */; };
-		5D9D9A3320F86BD2009BB456 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D994E20F86BD1009BB456 /* GoogleSignInDependencies.framework */; };
 		5D9D9A3420F86BD2009BB456 /* MessageKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D995420F86BD1009BB456 /* MessageKit-umbrella.h */; };
 		5D9D9A3520F86BD2009BB456 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D995720F86BD1009BB456 /* Socket.IO-Client-Swift-umbrella.h */; };
 		5D9D9A3620F86BD2009BB456 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D995A20F86BD1009BB456 /* Starscream-umbrella.h */; };
@@ -146,12 +136,6 @@
 		5D9D9A9120F86BD2009BB456 /* Socket.IO-Client-Swift-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D99F620F86BD1009BB456 /* Socket.IO-Client-Swift-prefix.pch */; };
 		5D9D9A9220F86BD2009BB456 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D99F920F86BD1009BB456 /* Starscream-dummy.m */; };
 		5D9D9A9320F86BD2009BB456 /* Starscream-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D99FA20F86BD1009BB456 /* Starscream-prefix.pch */; };
-		5D9D9A9420F86BD2009BB456 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9A1E20F86BD2009BB456 /* GoogleSymbolUtilities.framework */; };
-		5D9D9A9520F86BD2009BB456 /* ABCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A2020F86BD2009BB456 /* ABCDTests.swift */; };
-		5D9D9A9620F86BD2009BB456 /* ControllerUnderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A2120F86BD2009BB456 /* ControllerUnderTest.swift */; };
-		5D9D9A9720F86BD2009BB456 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A2320F86BD2009BB456 /* ViewControllerTests.swift */; };
-		5D9D9A9820F86BD2009BB456 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9A2520F86BD2009BB456 /* GoogleSignIn.framework */; };
-		5D9D9A9920F86BD2009BB456 /* ABCDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A2820F86BD2009BB456 /* ABCDUITests.swift */; };
 		5D9D9B8620F86BE9009BB456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A9B20F86BE5009BB456 /* AppDelegate.swift */; };
 		5D9D9B8720F86BE9009BB456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA120F86BE5009BB456 /* FirstViewController.swift */; };
 		5D9D9B8820F86BE9009BB456 /* networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA320F86BE5009BB456 /* networking.swift */; };
@@ -160,8 +144,6 @@
 		5D9D9B8B20F86BE9009BB456 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA620F86BE5009BB456 /* SegueRight.swift */; };
 		5D9D9B8C20F86BE9009BB456 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA720F86BE5009BB456 /* signInVC.swift */; };
 		5D9D9B8D20F86BE9009BB456 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA820F86BE5009BB456 /* ThirdViewController.swift */; };
-		5D9D9B8E20F86BE9009BB456 /* GoogleAppUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9AA920F86BE6009BB456 /* GoogleAppUtilities.framework */; };
-		5D9D9B8F20F86BE9009BB456 /* GoogleSignInDependencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9AAA20F86BE6009BB456 /* GoogleSignInDependencies.framework */; };
 		5D9D9B9020F86BE9009BB456 /* MessageKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB020F86BE7009BB456 /* MessageKit-umbrella.h */; };
 		5D9D9B9120F86BE9009BB456 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB320F86BE7009BB456 /* Socket.IO-Client-Swift-umbrella.h */; };
 		5D9D9B9220F86BE9009BB456 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB620F86BE7009BB456 /* Starscream-umbrella.h */; };
@@ -258,12 +240,6 @@
 		5D9D9BED20F86BE9009BB456 /* Socket.IO-Client-Swift-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9B5220F86BE7009BB456 /* Socket.IO-Client-Swift-prefix.pch */; };
 		5D9D9BEE20F86BE9009BB456 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9B5520F86BE7009BB456 /* Starscream-dummy.m */; };
 		5D9D9BEF20F86BE9009BB456 /* Starscream-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9B5620F86BE7009BB456 /* Starscream-prefix.pch */; };
-		5D9D9BF020F86BE9009BB456 /* GoogleSymbolUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9B7A20F86BE7009BB456 /* GoogleSymbolUtilities.framework */; };
-		5D9D9BF120F86BE9009BB456 /* ABCDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9B7C20F86BE8009BB456 /* ABCDTests.swift */; };
-		5D9D9BF220F86BE9009BB456 /* ControllerUnderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9B7D20F86BE8009BB456 /* ControllerUnderTest.swift */; };
-		5D9D9BF320F86BEA009BB456 /* ViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9B7F20F86BE8009BB456 /* ViewControllerTests.swift */; };
-		5D9D9BF420F86BEA009BB456 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D9D9B8120F86BE8009BB456 /* GoogleSignIn.framework */; };
-		5D9D9BF520F86BEA009BB456 /* ABCDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9B8420F86BE9009BB456 /* ABCDUITests.swift */; };
 		5FC62908D67939629C85EFE91EFFB154 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE1573A463388488B91260A456786605 /* NSAttributedString+Extensions.swift */; };
 		60F3ECA0F3EE6E00B2359B9AFA401F0D /* MediaMessageSizeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB625DF6E62C9133997650F1B6329AF /* MediaMessageSizeCalculator.swift */; };
 		61A37C6A6F9545E1AEDFCC9877133871 /* Socket.IO-Client-Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 329FF3ED4CA876ED0722691661D42902 /* Socket.IO-Client-Swift-dummy.m */; };
@@ -397,27 +373,6 @@
 			remoteGlobalIDString = 2BC8AFDF7A7C5F81BEDB7B6EE5AD665B;
 			remoteInfo = Starscream;
 		};
-		5D9D9A1720F86BD1009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8D820E99855009951F4;
-			remoteInfo = ABCD;
-		};
-		5D9D9A1920F86BD1009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8EC20E99855009951F4;
-			remoteInfo = ABCDTests;
-		};
-		5D9D9A1B20F86BD1009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8F720E99855009951F4;
-			remoteInfo = ABCDUITests;
-		};
 		5D9D9B5F20F86BE7009BB456 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5D9D9AFE20F86BE7009BB456 /* Pods.xcodeproj */;
@@ -466,27 +421,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 2BC8AFDF7A7C5F81BEDB7B6EE5AD665B;
 			remoteInfo = Starscream;
-		};
-		5D9D9B7320F86BE7009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8D820E99855009951F4;
-			remoteInfo = ABCD;
-		};
-		5D9D9B7520F86BE7009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8EC20E99855009951F4;
-			remoteInfo = ABCDTests;
-		};
-		5D9D9B7720F86BE7009BB456 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9080D8F720E99855009951F4;
-			remoteInfo = ABCDUITests;
 		};
 		C29CF5B6B48AD9613FDE36FF6DDB64A9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -548,21 +482,6 @@
 		5C4B9A184DC0C17E823C1205A0E0566C /* MessageContentCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessageContentCell.swift; path = Sources/Views/Cells/MessageContentCell.swift; sourceTree = "<group>"; };
 		5C537500FBC6DB877B05B3AA0407B524 /* LocationMessageCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LocationMessageCell.swift; path = Sources/Views/Cells/LocationMessageCell.swift; sourceTree = "<group>"; };
 		5CBB25901446D9A4F755038FBAAE7E6B /* MessagesLayoutDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MessagesLayoutDelegate.swift; path = Sources/Protocols/MessagesLayoutDelegate.swift; sourceTree = "<group>"; };
-		5D9D993F20F86BD1009BB456 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D9D994020F86BD1009BB456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5D9D994220F86BD1009BB456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5D9D994420F86BD1009BB456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5D9D994520F86BD1009BB456 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5D9D994620F86BD1009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D9D994720F86BD1009BB456 /* networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networking.swift; sourceTree = "<group>"; };
-		5D9D994820F86BD1009BB456 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		5D9D994920F86BD1009BB456 /* SegueLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueLeft.swift; sourceTree = "<group>"; };
-		5D9D994A20F86BD1009BB456 /* SegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueRight.swift; sourceTree = "<group>"; };
-		5D9D994B20F86BD1009BB456 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
-		5D9D994C20F86BD1009BB456 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		5D9D994D20F86BD1009BB456 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppUtilities.framework; path = "../../../Downloads/DineTogether-master/GoogleAppUtilities.framework"; sourceTree = "<group>"; };
-		5D9D994E20F86BD1009BB456 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignInDependencies.framework; path = "../../../Downloads/DineTogether-master/GoogleSignInDependencies.framework"; sourceTree = "<group>"; };
-		5D9D994F20F86BD1009BB456 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile.lock; path = "../../../Downloads/DineTogether-master/Podfile.lock"; sourceTree = "<group>"; };
 		5D9D995420F86BD1009BB456 /* MessageKit-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MessageKit-umbrella.h"; sourceTree = "<group>"; };
 		5D9D995520F86BD1009BB456 /* MessageKit.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = MessageKit.modulemap; sourceTree = "<group>"; };
 		5D9D995720F86BD1009BB456 /* Socket.IO-Client-Swift-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Socket.IO-Client-Swift-umbrella.h"; sourceTree = "<group>"; };
@@ -695,18 +614,6 @@
 		5D9D99F920F86BD1009BB456 /* Starscream-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
 		5D9D99FA20F86BD1009BB456 /* Starscream-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		5D9D99FB20F86BD1009BB456 /* Starscream.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
-		5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABCD.xcodeproj; path = "../../../Downloads/DineTogether-master/ABCD.xcodeproj"; sourceTree = "<group>"; };
-		5D9D9A1D20F86BD2009BB456 /* ABCD.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; name = ABCD.xcworkspace; path = "../../../Downloads/DineTogether-master/ABCD.xcworkspace"; sourceTree = "<group>"; };
-		5D9D9A1E20F86BD2009BB456 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = "../../../Downloads/DineTogether-master/GoogleSymbolUtilities.framework"; sourceTree = "<group>"; };
-		5D9D9A2020F86BD2009BB456 /* ABCDTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCDTests.swift; sourceTree = "<group>"; };
-		5D9D9A2120F86BD2009BB456 /* ControllerUnderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerUnderTest.swift; sourceTree = "<group>"; };
-		5D9D9A2220F86BD2009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D9D9A2320F86BD2009BB456 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
-		5D9D9A2420F86BD2009BB456 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = "../../../Downloads/DineTogether-master/GoogleSignIn.bundle"; sourceTree = "<group>"; };
-		5D9D9A2520F86BD2009BB456 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = "../../../Downloads/DineTogether-master/GoogleSignIn.framework"; sourceTree = "<group>"; };
-		5D9D9A2620F86BD2009BB456 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = Podfile; path = "../../../Downloads/DineTogether-master/Podfile"; sourceTree = "<group>"; };
-		5D9D9A2820F86BD2009BB456 /* ABCDUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCDUITests.swift; sourceTree = "<group>"; };
-		5D9D9A2920F86BD2009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D9D9A9B20F86BE5009BB456 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D9D9A9C20F86BE5009BB456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D9D9A9E20F86BE5009BB456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -719,8 +626,6 @@
 		5D9D9AA620F86BE5009BB456 /* SegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueRight.swift; sourceTree = "<group>"; };
 		5D9D9AA720F86BE5009BB456 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
 		5D9D9AA820F86BE5009BB456 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
-		5D9D9AA920F86BE6009BB456 /* GoogleAppUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleAppUtilities.framework; sourceTree = "<group>"; };
-		5D9D9AAA20F86BE6009BB456 /* GoogleSignInDependencies.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignInDependencies.framework; sourceTree = "<group>"; };
 		5D9D9AAB20F86BE6009BB456 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5D9D9AB020F86BE7009BB456 /* MessageKit-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MessageKit-umbrella.h"; sourceTree = "<group>"; };
 		5D9D9AB120F86BE7009BB456 /* MessageKit.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = MessageKit.modulemap; sourceTree = "<group>"; };
@@ -854,18 +759,6 @@
 		5D9D9B5520F86BE7009BB456 /* Starscream-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
 		5D9D9B5620F86BE7009BB456 /* Starscream-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		5D9D9B5720F86BE7009BB456 /* Starscream.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
-		5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ABCD.xcodeproj; path = "../../../Downloads/DineTogether-master/ABCD.xcodeproj"; sourceTree = "<group>"; };
-		5D9D9B7920F86BE7009BB456 /* ABCD.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = ABCD.xcworkspace; sourceTree = "<group>"; };
-		5D9D9B7A20F86BE7009BB456 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		5D9D9B7C20F86BE8009BB456 /* ABCDTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCDTests.swift; sourceTree = "<group>"; };
-		5D9D9B7D20F86BE8009BB456 /* ControllerUnderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerUnderTest.swift; sourceTree = "<group>"; };
-		5D9D9B7E20F86BE8009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D9D9B7F20F86BE8009BB456 /* ViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTests.swift; sourceTree = "<group>"; };
-		5D9D9B8020F86BE8009BB456 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = GoogleSignIn.bundle; sourceTree = "<group>"; };
-		5D9D9B8120F86BE8009BB456 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleSignIn.framework; sourceTree = "<group>"; };
-		5D9D9B8220F86BE9009BB456 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
-		5D9D9B8420F86BE9009BB456 /* ABCDUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ABCDUITests.swift; sourceTree = "<group>"; };
-		5D9D9B8520F86BE9009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		618686E362B51A5DA971E92FE06962E1 /* Pods-ABCD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ABCD-umbrella.h"; sourceTree = "<group>"; };
 		6223CE30D51BDF036F9C62A7668D5823 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Bundle+Extensions.swift"; path = "Sources/Extensions/Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		66B283F752248B4524959EF103379A54 /* Pods-ABCD-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ABCD-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -995,14 +888,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D9D9B8F20F86BE9009BB456 /* GoogleSignInDependencies.framework in Frameworks */,
-				5D9D9A9420F86BD2009BB456 /* GoogleSymbolUtilities.framework in Frameworks */,
-				5D9D9B8E20F86BE9009BB456 /* GoogleAppUtilities.framework in Frameworks */,
-				5D9D9BF020F86BE9009BB456 /* GoogleSymbolUtilities.framework in Frameworks */,
-				5D9D9A3320F86BD2009BB456 /* GoogleSignInDependencies.framework in Frameworks */,
-				5D9D9A3220F86BD2009BB456 /* GoogleAppUtilities.framework in Frameworks */,
-				5D9D9A9820F86BD2009BB456 /* GoogleSignIn.framework in Frameworks */,
-				5D9D9BF420F86BEA009BB456 /* GoogleSignIn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1190,26 +1075,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/Socket.IO-Client-Swift";
-			sourceTree = "<group>";
-		};
-		5D9D993E20F86BD1009BB456 /* ABCD */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D993F20F86BD1009BB456 /* AppDelegate.swift */,
-				5D9D994020F86BD1009BB456 /* Assets.xcassets */,
-				5D9D994120F86BD1009BB456 /* LaunchScreen.storyboard */,
-				5D9D994320F86BD1009BB456 /* Main.storyboard */,
-				5D9D994520F86BD1009BB456 /* FirstViewController.swift */,
-				5D9D994620F86BD1009BB456 /* Info.plist */,
-				5D9D994720F86BD1009BB456 /* networking.swift */,
-				5D9D994820F86BD1009BB456 /* SecondViewController.swift */,
-				5D9D994920F86BD1009BB456 /* SegueLeft.swift */,
-				5D9D994A20F86BD1009BB456 /* SegueRight.swift */,
-				5D9D994B20F86BD1009BB456 /* signInVC.swift */,
-				5D9D994C20F86BD1009BB456 /* ThirdViewController.swift */,
-			);
-			name = ABCD;
-			path = "../../../Downloads/DineTogether-master/ABCD";
 			sourceTree = "<group>";
 		};
 		5D9D995020F86BD1009BB456 /* Pods */ = {
@@ -1652,38 +1517,6 @@
 				5D9D99FB20F86BD1009BB456 /* Starscream.xcconfig */,
 			);
 			path = Starscream;
-			sourceTree = "<group>";
-		};
-		5D9D9A1220F86BD1009BB456 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9A1820F86BD1009BB456 /* ABCD.app */,
-				5D9D9A1A20F86BD1009BB456 /* ABCDTests.xctest */,
-				5D9D9A1C20F86BD1009BB456 /* ABCDUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5D9D9A1F20F86BD2009BB456 /* ABCDTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9A2020F86BD2009BB456 /* ABCDTests.swift */,
-				5D9D9A2120F86BD2009BB456 /* ControllerUnderTest.swift */,
-				5D9D9A2220F86BD2009BB456 /* Info.plist */,
-				5D9D9A2320F86BD2009BB456 /* ViewControllerTests.swift */,
-			);
-			name = ABCDTests;
-			path = "../../../Downloads/DineTogether-master/ABCDTests";
-			sourceTree = "<group>";
-		};
-		5D9D9A2720F86BD2009BB456 /* ABCDUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9A2820F86BD2009BB456 /* ABCDUITests.swift */,
-				5D9D9A2920F86BD2009BB456 /* Info.plist */,
-			);
-			name = ABCDUITests;
-			path = "../../../Downloads/DineTogether-master/ABCDUITests";
 			sourceTree = "<group>";
 		};
 		5D9D9A9A20F86BE5009BB456 /* ABCD */ = {
@@ -2146,36 +1979,6 @@
 			path = Starscream;
 			sourceTree = "<group>";
 		};
-		5D9D9B6E20F86BE7009BB456 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9B7420F86BE7009BB456 /* ABCD.app */,
-				5D9D9B7620F86BE7009BB456 /* ABCDTests.xctest */,
-				5D9D9B7820F86BE7009BB456 /* ABCDUITests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		5D9D9B7B20F86BE8009BB456 /* ABCDTests */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9B7C20F86BE8009BB456 /* ABCDTests.swift */,
-				5D9D9B7D20F86BE8009BB456 /* ControllerUnderTest.swift */,
-				5D9D9B7E20F86BE8009BB456 /* Info.plist */,
-				5D9D9B7F20F86BE8009BB456 /* ViewControllerTests.swift */,
-			);
-			path = ABCDTests;
-			sourceTree = "<group>";
-		};
-		5D9D9B8320F86BE9009BB456 /* ABCDUITests */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9B8420F86BE9009BB456 /* ABCDUITests.swift */,
-				5D9D9B8520F86BE9009BB456 /* Info.plist */,
-			);
-			path = ABCDUITests;
-			sourceTree = "<group>";
-		};
 		6FB350F0BB96057634682633C5482B2D /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -2207,30 +2010,8 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				5D9D993E20F86BD1009BB456 /* ABCD */,
-				5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */,
-				5D9D9A1D20F86BD2009BB456 /* ABCD.xcworkspace */,
-				5D9D9A1F20F86BD2009BB456 /* ABCDTests */,
-				5D9D9A2720F86BD2009BB456 /* ABCDUITests */,
-				5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */,
-				5D9D9B7920F86BE7009BB456 /* ABCD.xcworkspace */,
-				5D9D9B7B20F86BE8009BB456 /* ABCDTests */,
-				5D9D9B8320F86BE9009BB456 /* ABCDUITests */,
-				5D9D994D20F86BD1009BB456 /* GoogleAppUtilities.framework */,
-				5D9D9A2420F86BD2009BB456 /* GoogleSignIn.bundle */,
-				5D9D9A2520F86BD2009BB456 /* GoogleSignIn.framework */,
-				5D9D9B8020F86BE8009BB456 /* GoogleSignIn.bundle */,
-				5D9D9B8120F86BE8009BB456 /* GoogleSignIn.framework */,
-				5D9D994E20F86BD1009BB456 /* GoogleSignInDependencies.framework */,
-				5D9D9A1E20F86BD2009BB456 /* GoogleSymbolUtilities.framework */,
-				5D9D9A2620F86BD2009BB456 /* Podfile */,
-				5D9D9B7A20F86BE7009BB456 /* GoogleSymbolUtilities.framework */,
-				5D9D9B8220F86BE9009BB456 /* Podfile */,
-				5D9D994F20F86BD1009BB456 /* Podfile.lock */,
 				5D9D995020F86BD1009BB456 /* Pods */,
 				5D9D9A9A20F86BE5009BB456 /* ABCD */,
-				5D9D9AA920F86BE6009BB456 /* GoogleAppUtilities.framework */,
-				5D9D9AAA20F86BE6009BB456 /* GoogleSignInDependencies.framework */,
 				5D9D9AAB20F86BE6009BB456 /* Podfile.lock */,
 				5D9D9AAC20F86BE7009BB456 /* Pods */,
 				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
@@ -2481,14 +2262,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5D9D9B6E20F86BE7009BB456 /* Products */;
-					ProjectRef = 5D9D9B6D20F86BE7009BB456 /* ABCD.xcodeproj */;
-				},
-				{
-					ProductGroup = 5D9D9A1220F86BD1009BB456 /* Products */;
-					ProjectRef = 5D9D9A1120F86BD1009BB456 /* ABCD.xcodeproj */;
-				},
-				{
 					ProductGroup = 5D9D9AFF20F86BE7009BB456 /* Products */;
 					ProjectRef = 5D9D9AFE20F86BE7009BB456 /* Pods.xcodeproj */;
 				},
@@ -2560,27 +2333,6 @@
 			remoteRef = 5D9D9A0F20F86BD1009BB456 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5D9D9A1820F86BD1009BB456 /* ABCD.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ABCD.app;
-			remoteRef = 5D9D9A1720F86BD1009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5D9D9A1A20F86BD1009BB456 /* ABCDTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ABCDTests.xctest;
-			remoteRef = 5D9D9A1920F86BD1009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5D9D9A1C20F86BD1009BB456 /* ABCDUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ABCDUITests.xctest;
-			remoteRef = 5D9D9A1B20F86BD1009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		5D9D9B6020F86BE7009BB456 /* libMessageKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -2628,27 +2380,6 @@
 			fileType = archive.ar;
 			path = libStarscream.a;
 			remoteRef = 5D9D9B6B20F86BE7009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5D9D9B7420F86BE7009BB456 /* ABCD.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = ABCD.app;
-			remoteRef = 5D9D9B7320F86BE7009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5D9D9B7620F86BE7009BB456 /* ABCDTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ABCDTests.xctest;
-			remoteRef = 5D9D9B7520F86BE7009BB456 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		5D9D9B7820F86BE7009BB456 /* ABCDUITests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = ABCDUITests.xctest;
-			remoteRef = 5D9D9B7720F86BE7009BB456 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -2790,7 +2521,6 @@
 				782E08E3E31252D2472EA071A5A634D5 /* CGRect+Extensions.swift in Sources */,
 				5D9D9BEE20F86BE9009BB456 /* Starscream-dummy.m in Sources */,
 				5D9D9A6920F86BD2009BB456 /* MessageLabel.swift in Sources */,
-				5D9D9A9620F86BD2009BB456 /* ControllerUnderTest.swift in Sources */,
 				3219AFD989BB4F004C5D39D74FFF060E /* DetectorType.swift in Sources */,
 				85290B031F561565B61108861EA455BD /* InputBarItem.swift in Sources */,
 				5D9D9BC420F86BE9009BB456 /* MessageInputBar.swift in Sources */,
@@ -2815,7 +2545,6 @@
 				5D9D9BAB20F86BE9009BB456 /* MessageStyle.swift in Sources */,
 				5D9D9BAA20F86BE9009BB456 /* MessageKitError.swift in Sources */,
 				5D9D9A3D20F86BD2009BB456 /* UIColor+Extensions.swift in Sources */,
-				5D9D9A3120F86BD2009BB456 /* ThirdViewController.swift in Sources */,
 				5D9D9BDC20F86BE9009BB456 /* SocketParsable.swift in Sources */,
 				5D9D9A4620F86BD2009BB456 /* TextMessageSizeCalculator.swift in Sources */,
 				5D9D9BD520F86BE9009BB456 /* SocketEnginePacketType.swift in Sources */,
@@ -2826,10 +2555,8 @@
 				5D9D9A5020F86BD2009BB456 /* NSConstraintLayoutSet.swift in Sources */,
 				129FFE6FC712B18A48DD7C9C555B0397 /* LocationItem.swift in Sources */,
 				5D9D9BEB20F86BE9009BB456 /* Pods-ABCDUITests-dummy.m in Sources */,
-				5D9D9A9920F86BD2009BB456 /* ABCDUITests.swift in Sources */,
 				5D9D9B8D20F86BE9009BB456 /* ThirdViewController.swift in Sources */,
 				5D9D9A3820F86BD2009BB456 /* MessagesViewController+Menu.swift in Sources */,
-				5D9D9A9720F86BD2009BB456 /* ViewControllerTests.swift in Sources */,
 				5D9D9B8720F86BE9009BB456 /* FirstViewController.swift in Sources */,
 				5D9D9BBA20F86BE9009BB456 /* MediaMessageCell.swift in Sources */,
 				5D9D9BAC20F86BE9009BB456 /* NSConstraintLayoutSet.swift in Sources */,
@@ -2873,10 +2600,8 @@
 				75DF8426F40D6CDEC2AEC6AAE39A6F5B /* MessageContainerView.swift in Sources */,
 				5D9D9A8620F86BD2009BB456 /* Compression.swift in Sources */,
 				5D9D9B8620F86BE9009BB456 /* AppDelegate.swift in Sources */,
-				5D9D9A2E20F86BD2009BB456 /* SegueLeft.swift in Sources */,
 				5D9D9A8E20F86BD2009BB456 /* Pods-ABCDTests-dummy.m in Sources */,
 				45C4B0A6538961B3F16A4EECE0114C2C /* MessageContentCell.swift in Sources */,
-				5D9D9BF120F86BE9009BB456 /* ABCDTests.swift in Sources */,
 				5D9D9A8520F86BD2009BB456 /* SSLSecurity.swift in Sources */,
 				5D9D9A9220F86BD2009BB456 /* Starscream-dummy.m in Sources */,
 				5D9D9A6420F86BD2009BB456 /* InputStackView.swift in Sources */,
@@ -2903,7 +2628,6 @@
 				3E34DDA2D20E60BC4ECDBED44DD10562 /* MessageKitError.swift in Sources */,
 				5D9D9A3E20F86BD2009BB456 /* UIEdgeInsets+Extensions.swift in Sources */,
 				5D9D9A5A20F86BD2009BB456 /* MessageType.swift in Sources */,
-				5D9D9A2B20F86BD2009BB456 /* FirstViewController.swift in Sources */,
 				5D9D9A6820F86BD2009BB456 /* MessageInputBar.swift in Sources */,
 				5D9D9BE620F86BE9009BB456 /* MessageKit-dummy.m in Sources */,
 				5D9D9BA620F86BE9009BB456 /* LabelAlignment.swift in Sources */,
@@ -2916,9 +2640,7 @@
 				5D9D9A5920F86BD2009BB456 /* MessagesLayoutDelegate.swift in Sources */,
 				5D9D9A6A20F86BD2009BB456 /* MessagesCollectionView.swift in Sources */,
 				5D9D9B9320F86BE9009BB456 /* MessagesViewController+Keyboard.swift in Sources */,
-				5D9D9A2A20F86BD2009BB456 /* AppDelegate.swift in Sources */,
 				5D9D9A7220F86BD2009BB456 /* SocketIOClientConfiguration.swift in Sources */,
-				5D9D9A9520F86BD2009BB456 /* ABCDTests.swift in Sources */,
 				5D9D9BD420F86BE9009BB456 /* SocketEngineClient.swift in Sources */,
 				5D9D9BC120F86BE9009BB456 /* InputTextView.swift in Sources */,
 				5D9D9BDE20F86BE9009BB456 /* SocketLogger.swift in Sources */,
@@ -2958,18 +2680,15 @@
 				5D9D9BA220F86BE9009BB456 /* TextMessageSizeCalculator.swift in Sources */,
 				B0DA200636CC339A1A4DCC5ED1842750 /* MessageStyle.swift in Sources */,
 				5D9D9BB420F86BE9009BB456 /* MessagesDisplayDelegate.swift in Sources */,
-				5D9D9A2D20F86BD2009BB456 /* SecondViewController.swift in Sources */,
 				5D9D9BC920F86BE9009BB456 /* SocketAckEmitter.swift in Sources */,
 				5D9D9B9F20F86BE9009BB456 /* MessagesCollectionViewFlowLayout.swift in Sources */,
 				5D9D9BA320F86BE9009BB456 /* Avatar.swift in Sources */,
 				5D9D9BD120F86BE9009BB456 /* SocketIOStatus.swift in Sources */,
 				2EF31864198A49D7F0B8D22F2929C5F6 /* MessagesViewController+Keyboard.swift in Sources */,
 				5D9D9A4E20F86BD2009BB456 /* MessageKitError.swift in Sources */,
-				5D9D9BF320F86BEA009BB456 /* ViewControllerTests.swift in Sources */,
 				5D9D9BBE20F86BE9009BB456 /* MessageReusableView.swift in Sources */,
 				5D9D9A6620F86BD2009BB456 /* InsetLabel.swift in Sources */,
 				5D9D9BE020F86BE9009BB456 /* SocketTypes.swift in Sources */,
-				5D9D9A3020F86BD2009BB456 /* signInVC.swift in Sources */,
 				5D9D9A8F20F86BD2009BB456 /* Pods-ABCDUITests-dummy.m in Sources */,
 				9ADDB4A0DA260E170E3CE21D1AF7619D /* MessagesViewController+Menu.swift in Sources */,
 				C991E59095DA657AD5C9D19C1F333F81 /* MessagesViewController.swift in Sources */,
@@ -2988,7 +2707,6 @@
 				5D9D9BAE20F86BE9009BB456 /* LocationItem.swift in Sources */,
 				797A0FCDC5BAA7535FB53CE7BED42696 /* Sender.swift in Sources */,
 				96F1BE3CA3BE06B6F96F11E33A8F29E8 /* SeparatorLine.swift in Sources */,
-				5D9D9BF220F86BE9009BB456 /* ControllerUnderTest.swift in Sources */,
 				5D9D9B9920F86BE9009BB456 /* UIColor+Extensions.swift in Sources */,
 				5D9D9B9E20F86BE9009BB456 /* MediaMessageSizeCalculator.swift in Sources */,
 				5D9D9BE120F86BE9009BB456 /* SSLSecurity.swift in Sources */,
@@ -3008,9 +2726,6 @@
 				5D9D9A6320F86BD2009BB456 /* InputBarItem.swift in Sources */,
 				D0D34AE61986272C2450F5313A887B94 /* UIColor+Extensions.swift in Sources */,
 				5D9D9A8C20F86BD2009BB456 /* Pods-ABCD-dummy.m in Sources */,
-				5D9D9BF520F86BEA009BB456 /* ABCDUITests.swift in Sources */,
-				5D9D9A2F20F86BD2009BB456 /* SegueRight.swift in Sources */,
-				5D9D9A2C20F86BD2009BB456 /* networking.swift in Sources */,
 				582C8F9365DA91F4488E2628744E297F /* UIEdgeInsets+Extensions.swift in Sources */,
 				DA50C94287745A124559FBD4CBD19504 /* UIView+Extensions.swift in Sources */,
 				5D9D9A5B20F86BD2009BB456 /* MessageKit+Availability.swift in Sources */,
@@ -3101,22 +2816,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5D9D994120F86BD1009BB456 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D9D994220F86BD1009BB456 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		5D9D994320F86BD1009BB456 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D9D994420F86BD1009BB456 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		5D9D9A9D20F86BE5009BB456 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
