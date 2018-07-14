@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MessageKit
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -60,7 +61,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
                                       message: "Distance: \(posts[row].distance) KM\n Time: \(posts[row].time)\n",
                                       preferredStyle: UIAlertControllerStyle.alert)
         
-        alert.addAction(UIAlertAction(title: "Message", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
+            let childVC = MessagesViewController()
+            self.addChildViewController(childVC)
+            self.view.addSubview(childVC.view)
+            childVC.didMove(toParentViewController: self)
+            self.becomeFirstResponder()
+        }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
