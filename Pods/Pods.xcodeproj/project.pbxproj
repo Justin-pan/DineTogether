@@ -136,14 +136,6 @@
 		5D9D9A9120F86BD2009BB456 /* Socket.IO-Client-Swift-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D99F620F86BD1009BB456 /* Socket.IO-Client-Swift-prefix.pch */; };
 		5D9D9A9220F86BD2009BB456 /* Starscream-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D99F920F86BD1009BB456 /* Starscream-dummy.m */; };
 		5D9D9A9320F86BD2009BB456 /* Starscream-prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D99FA20F86BD1009BB456 /* Starscream-prefix.pch */; };
-		5D9D9B8620F86BE9009BB456 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9A9B20F86BE5009BB456 /* AppDelegate.swift */; };
-		5D9D9B8720F86BE9009BB456 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA120F86BE5009BB456 /* FirstViewController.swift */; };
-		5D9D9B8820F86BE9009BB456 /* networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA320F86BE5009BB456 /* networking.swift */; };
-		5D9D9B8920F86BE9009BB456 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA420F86BE5009BB456 /* SecondViewController.swift */; };
-		5D9D9B8A20F86BE9009BB456 /* SegueLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA520F86BE5009BB456 /* SegueLeft.swift */; };
-		5D9D9B8B20F86BE9009BB456 /* SegueRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA620F86BE5009BB456 /* SegueRight.swift */; };
-		5D9D9B8C20F86BE9009BB456 /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA720F86BE5009BB456 /* signInVC.swift */; };
-		5D9D9B8D20F86BE9009BB456 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9D9AA820F86BE5009BB456 /* ThirdViewController.swift */; };
 		5D9D9B9020F86BE9009BB456 /* MessageKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB020F86BE7009BB456 /* MessageKit-umbrella.h */; };
 		5D9D9B9120F86BE9009BB456 /* Socket.IO-Client-Swift-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB320F86BE7009BB456 /* Socket.IO-Client-Swift-umbrella.h */; };
 		5D9D9B9220F86BE9009BB456 /* Starscream-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D9D9AB620F86BE7009BB456 /* Starscream-umbrella.h */; };
@@ -614,18 +606,6 @@
 		5D9D99F920F86BD1009BB456 /* Starscream-dummy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Starscream-dummy.m"; sourceTree = "<group>"; };
 		5D9D99FA20F86BD1009BB456 /* Starscream-prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Starscream-prefix.pch"; sourceTree = "<group>"; };
 		5D9D99FB20F86BD1009BB456 /* Starscream.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Starscream.xcconfig; sourceTree = "<group>"; };
-		5D9D9A9B20F86BE5009BB456 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5D9D9A9C20F86BE5009BB456 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		5D9D9A9E20F86BE5009BB456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		5D9D9AA020F86BE5009BB456 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		5D9D9AA120F86BE5009BB456 /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		5D9D9AA220F86BE5009BB456 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5D9D9AA320F86BE5009BB456 /* networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = networking.swift; sourceTree = "<group>"; };
-		5D9D9AA420F86BE5009BB456 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		5D9D9AA520F86BE5009BB456 /* SegueLeft.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueLeft.swift; sourceTree = "<group>"; };
-		5D9D9AA620F86BE5009BB456 /* SegueRight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueRight.swift; sourceTree = "<group>"; };
-		5D9D9AA720F86BE5009BB456 /* signInVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
-		5D9D9AA820F86BE5009BB456 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5D9D9AAB20F86BE6009BB456 /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		5D9D9AB020F86BE7009BB456 /* MessageKit-umbrella.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MessageKit-umbrella.h"; sourceTree = "<group>"; };
 		5D9D9AB120F86BE7009BB456 /* MessageKit.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = MessageKit.modulemap; sourceTree = "<group>"; };
@@ -1519,25 +1499,6 @@
 			path = Starscream;
 			sourceTree = "<group>";
 		};
-		5D9D9A9A20F86BE5009BB456 /* ABCD */ = {
-			isa = PBXGroup;
-			children = (
-				5D9D9A9B20F86BE5009BB456 /* AppDelegate.swift */,
-				5D9D9A9C20F86BE5009BB456 /* Assets.xcassets */,
-				5D9D9A9D20F86BE5009BB456 /* LaunchScreen.storyboard */,
-				5D9D9A9F20F86BE5009BB456 /* Main.storyboard */,
-				5D9D9AA120F86BE5009BB456 /* FirstViewController.swift */,
-				5D9D9AA220F86BE5009BB456 /* Info.plist */,
-				5D9D9AA320F86BE5009BB456 /* networking.swift */,
-				5D9D9AA420F86BE5009BB456 /* SecondViewController.swift */,
-				5D9D9AA520F86BE5009BB456 /* SegueLeft.swift */,
-				5D9D9AA620F86BE5009BB456 /* SegueRight.swift */,
-				5D9D9AA720F86BE5009BB456 /* signInVC.swift */,
-				5D9D9AA820F86BE5009BB456 /* ThirdViewController.swift */,
-			);
-			path = ABCD;
-			sourceTree = "<group>";
-		};
 		5D9D9AAC20F86BE7009BB456 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -2011,7 +1972,6 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				5D9D995020F86BD1009BB456 /* Pods */,
-				5D9D9A9A20F86BE5009BB456 /* ABCD */,
 				5D9D9AAB20F86BE6009BB456 /* Podfile.lock */,
 				5D9D9AAC20F86BE7009BB456 /* Pods */,
 				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
@@ -2511,7 +2471,6 @@
 				5D9D9BB320F86BE9009BB456 /* MessagesDataSource.swift in Sources */,
 				5D9D9A5120F86BD2009BB456 /* Sender.swift in Sources */,
 				FBE46BACF9744D9E155927486CFCC521 /* CellSizeCalculator.swift in Sources */,
-				5D9D9B8C20F86BE9009BB456 /* signInVC.swift in Sources */,
 				5D9D9BB220F86BE9009BB456 /* MessageLabelDelegate.swift in Sources */,
 				5D9D9BD220F86BE9009BB456 /* SocketRawView.swift in Sources */,
 				5D9D9A4220F86BD2009BB456 /* MediaMessageSizeCalculator.swift in Sources */,
@@ -2555,9 +2514,7 @@
 				5D9D9A5020F86BD2009BB456 /* NSConstraintLayoutSet.swift in Sources */,
 				129FFE6FC712B18A48DD7C9C555B0397 /* LocationItem.swift in Sources */,
 				5D9D9BEB20F86BE9009BB456 /* Pods-ABCDUITests-dummy.m in Sources */,
-				5D9D9B8D20F86BE9009BB456 /* ThirdViewController.swift in Sources */,
 				5D9D9A3820F86BD2009BB456 /* MessagesViewController+Menu.swift in Sources */,
-				5D9D9B8720F86BE9009BB456 /* FirstViewController.swift in Sources */,
 				5D9D9BBA20F86BE9009BB456 /* MediaMessageCell.swift in Sources */,
 				5D9D9BAC20F86BE9009BB456 /* NSConstraintLayoutSet.swift in Sources */,
 				5D9D9A7D20F86BD2009BB456 /* SocketManager.swift in Sources */,
@@ -2567,9 +2524,7 @@
 				4F2532D3340D21146A5FB7FFFE69ACC5 /* LocationMessageCell.swift in Sources */,
 				5D9D9BB820F86BE9009BB456 /* AvatarView.swift in Sources */,
 				5D9D9A6D20F86BD2009BB456 /* SocketAckEmitter.swift in Sources */,
-				5D9D9B8920F86BE9009BB456 /* SecondViewController.swift in Sources */,
 				19597B3FBFC3AE70B456FD730D58CB94 /* LocationMessageSizeCalculator.swift in Sources */,
-				5D9D9B8B20F86BE9009BB456 /* SegueRight.swift in Sources */,
 				C150A59137938E08242654B141326A3B /* LocationMessageSnapshotOptions.swift in Sources */,
 				5D9D9A5F20F86BD2009BB456 /* MessageCollectionViewCell.swift in Sources */,
 				5D9D9BDA20F86BE9009BB456 /* SocketManagerSpec.swift in Sources */,
@@ -2599,7 +2554,6 @@
 				1BC56E918CD95B7F9E5031E262EA8F2B /* MessageCollectionViewCell.swift in Sources */,
 				75DF8426F40D6CDEC2AEC6AAE39A6F5B /* MessageContainerView.swift in Sources */,
 				5D9D9A8620F86BD2009BB456 /* Compression.swift in Sources */,
-				5D9D9B8620F86BE9009BB456 /* AppDelegate.swift in Sources */,
 				5D9D9A8E20F86BD2009BB456 /* Pods-ABCDTests-dummy.m in Sources */,
 				45C4B0A6538961B3F16A4EECE0114C2C /* MessageContentCell.swift in Sources */,
 				5D9D9A8520F86BD2009BB456 /* SSLSecurity.swift in Sources */,
@@ -2635,7 +2589,6 @@
 				14B97C400E44D7059A4334E6440C8C38 /* MessageLabel.swift in Sources */,
 				86EC4E6EBDDCD56E3EB77193DD11AF41 /* MessageLabelDelegate.swift in Sources */,
 				5D9D9A7A20F86BD2009BB456 /* SocketEnginePollable.swift in Sources */,
-				5D9D9B8820F86BE9009BB456 /* networking.swift in Sources */,
 				5D9D9A5720F86BD2009BB456 /* MessagesDataSource.swift in Sources */,
 				5D9D9A5920F86BD2009BB456 /* MessagesLayoutDelegate.swift in Sources */,
 				5D9D9A6A20F86BD2009BB456 /* MessagesCollectionView.swift in Sources */,
@@ -2710,7 +2663,6 @@
 				5D9D9B9920F86BE9009BB456 /* UIColor+Extensions.swift in Sources */,
 				5D9D9B9E20F86BE9009BB456 /* MediaMessageSizeCalculator.swift in Sources */,
 				5D9D9BE120F86BE9009BB456 /* SSLSecurity.swift in Sources */,
-				5D9D9B8A20F86BE9009BB456 /* SegueLeft.swift in Sources */,
 				5D9D9B9A20F86BE9009BB456 /* UIEdgeInsets+Extensions.swift in Sources */,
 				5D9D9A4520F86BD2009BB456 /* MessageSizeCalculator.swift in Sources */,
 				343BCA3F62808EDF0022B597A02DE235 /* TextMessageCell.swift in Sources */,
@@ -2814,25 +2766,6 @@
 			targetProxy = 1CA08CEE932075B2758B78E2428FE002 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		5D9D9A9D20F86BE5009BB456 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D9D9A9E20F86BE5009BB456 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		5D9D9A9F20F86BE5009BB456 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5D9D9AA020F86BE5009BB456 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0461936514268C0C3AE2FC2F372A2E28 /* Debug */ = {
