@@ -19,7 +19,8 @@ struct Posting: Codable {
     let _id : String
     let email: String
     let fullName: String
-    let time: String
+    let date: String
+    let time: Int
     let distance: Int
     let latitude: Double
     let longitude: Double

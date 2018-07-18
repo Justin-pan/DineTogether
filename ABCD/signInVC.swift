@@ -19,6 +19,9 @@ class userInfo {
     var givenName : String = ""
     var familyName : String = ""
     var email : String = ""
+    var ExpiryDate = Date()
+    var SavePost : [Posting] = []
+    var ExpiryTime : Double = -1
 }
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate {

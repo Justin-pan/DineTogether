@@ -20,6 +20,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     var userLocation: CLLocation!
     var Action = UIAlertAction.self
     var actionString: String?
+    let CurrTime = Date()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DispatchQueue.main.async {
@@ -29,6 +32,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         // setup for table
         tableView.delegate = self
         tableView.dataSource = self
+        if (userInfo.shared.ExpiryTime != -1)&&(CurrTime.timeIntervalSince(userInfo.shared.ExpiryDate) < userInfo.shared.ExpiryTime*60){
+            posts=userInfo.shared.SavePost
+            self.tableView.reloadData()
+        }
     }
     
     // posting list width in UI
@@ -88,20 +95,24 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             
             //creating the posting and formatting and such
             let time = alert.textFields![0].text
+            userInfo.shared.ExpiryTime = Double(time!)!
             let distance = alert.textFields![1].text
             let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+            formatter.dateFormat = "eeee, h:m a"
             let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
             let formattedNewDate = formatter.string(from: newDate!)
-            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, time: formattedNewDate, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
+            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
+            
             
             //submitting the post
             submitPost(post: myPost) {(result) in
                 switch result{
                 case .success(let posts):
                     self.posts = posts
+                    userInfo.shared.ExpiryDate = Date()
+                    userInfo.shared.SavePost = posts
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }

@@ -32,7 +32,7 @@ class ThirdViewController: UIViewController,SFSafariViewControllerDelegate {
 //      controller.delegate = self
 //      controller.dismiss(animated: true, completion: nil)
         GIDSignIn.sharedInstance().signOut()
-
+        userInfo.shared.SavePost = []
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signInVC"{
