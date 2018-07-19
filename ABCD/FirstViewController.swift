@@ -4,7 +4,7 @@
 //
 //  Created by savtozb on 2018-06-25.
 //  Copyright © 2018 savtozb. All rights reserved.
-//
+// test commit comment
 
 import UIKit
 import CoreLocation
