@@ -4,14 +4,14 @@
 //
 //  Created by savtozb on 2018-06-25.
 //  Copyright © 2018 savtozb. All rights reserved.
-// test commit comment
+//
 
 import UIKit
 import CoreLocation
 import MessageKit
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, UITableViewDataSource, UITableViewDelegate {
-
+    
     // setup for table
     @IBOutlet var tableView: UITableView!
     let textCellIdentifier = "TextCell"
@@ -21,7 +21,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     var Action = UIAlertAction.self
     var actionString: String?
     let CurrTime = Date()
-    
+    var refreshControl : UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +32,39 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         // setup for table
         tableView.delegate = self
         tableView.dataSource = self
+        if (userInfo.shared.ExpiryTime != -1)&&(CurrTime.timeIntervalSince(userInfo.shared.ExpiryDate) > userInfo.shared.ExpiryTime*60){
+            userInfo.shared.LastPost = Posting(_id: "",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
+        }
+        
         if (userInfo.shared.ExpiryTime != -1)&&(CurrTime.timeIntervalSince(userInfo.shared.ExpiryDate) < userInfo.shared.ExpiryTime*60){
             posts=userInfo.shared.SavePost
             self.tableView.reloadData()
         }
+        view.addSubview(tableView)
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(FirstViewController.refresh), for: UIControlEvents.valueChanged)
+        tableView.addSubview(refreshControl)
     }
     
+    @objc func refresh(){
+        
+        if(userInfo.shared.LastPost.time != 0){
+            submitPost(post: userInfo.shared.LastPost) {(result) in
+                switch result{
+                case .success(let posts):
+                    self.posts = posts
+                    userInfo.shared.SavePost = posts
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    print(posts)
+                case.failure(let error):
+                    fatalError("error: \(error)")
+                }
+            }
+        }
+        refreshControl.endRefreshing()
+    }
     // posting list width in UI
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -54,7 +81,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         let row = indexPath.row
         cell.textLabel?.text = posts[row].fullName
-        cell.detailTextLabel?.text = "Time: " + String(posts[row].time)
+        cell.detailTextLabel?.text = "Available until: " + String(posts[row].date)
         
         return cell
     }
@@ -64,9 +91,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
         
-        let alert = UIAlertController(title: "Posting by \(posts[row].email)",
-                                      message: "Distance: \(posts[row].distance) KM\n Time: \(posts[row].time)\n",
-                                      preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Posting by\n\(posts[row].fullName)\n(\(posts[row].email))",
+            message: "/nAt a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes",
+            preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
             let childVC = MessagesViewController()
@@ -104,7 +131,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             let formattedNewDate = formatter.string(from: newDate!)
             let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
             print(myPost)
-            
+            userInfo.shared.LastPost = myPost
             
             //submitting the post
             submitPost(post: myPost) {(result) in
@@ -185,10 +212,11 @@ extension UIAlertController{
     }
     @objc func textDidChangeInPostAlert(){
         if let time = textFields?[0].text,
-        let location = textFields?[1].text,
-        let action = actions.first{
+            let location = textFields?[1].text,
+            let action = actions.first{
             //sets save action to whether or not both of these have ints
             action.isEnabled = isValidLocation(location) && isValidTime(time)
         }
     }
 }
+

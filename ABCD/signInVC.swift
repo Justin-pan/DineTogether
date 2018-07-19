@@ -22,6 +22,7 @@ class userInfo {
     var ExpiryDate = Date()
     var SavePost : [Posting] = []
     var ExpiryTime : Double = -1
+    var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
 }
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate {
@@ -29,14 +30,14 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     var givenName: String = ""
     var familyName: String = ""
     var userSign = [User]()
- 
+    
     @IBOutlet weak var SignInButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         GIDSignIn.sharedInstance().uiDelegate = self
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     @IBAction func SignOut(_ sender: Any) {
         
         let url = URL(string: "https://www.google.com/accounts/Logout")!
@@ -47,7 +48,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
         //controller.dismiss(animated: true, completion: nil)
         GIDSignIn.sharedInstance().signOut()
         self.SignInButton.setTitle("Sign In",for: .normal)
-  
+        
         
     }
     func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
@@ -57,7 +58,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     func signInWillDispatch(_signIn: GIDSignIn!, error: Error!) {
     }
     
@@ -108,4 +109,5 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
         }
     }
 }
+
 

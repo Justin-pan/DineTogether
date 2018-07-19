@@ -25,20 +25,22 @@ class ThirdViewController: UIViewController,SFSafariViewControllerDelegate {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func logout(_ sender: Any) {
-                self.performSegue(withIdentifier: "signInVC", sender:SignOutButton  )
-//      let url = URL(string: "https://www.google.com/accounts/Logout")!
-//      let controller = SFSafariViewController(url: url)
-//      self.present(controller, animated: true, completion: nil)
-//      controller.delegate = self
-//      controller.dismiss(animated: true, completion: nil)
+        self.performSegue(withIdentifier: "signInVC", sender:SignOutButton  )
+        //      let url = URL(string: "https://www.google.com/accounts/Logout")!
+        //      let controller = SFSafariViewController(url: url)
+        //      self.present(controller, animated: true, completion: nil)
+        //      controller.delegate = self
+        //      controller.dismiss(animated: true, completion: nil)
         GIDSignIn.sharedInstance().signOut()
         userInfo.shared.SavePost = []
+        userInfo.shared.LastPost = Posting(_id: "",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "signInVC"{
             _ = segue.destination as! ViewController
         }
     }
-
+    
 }
+
 
