@@ -65,6 +65,16 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         }
         refreshControl.endRefreshing()
     }
+    
+    @IBAction func showGraph(_ sender: Any){
+        self.performSegue(withIdentifier: "Showgraph", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Showgraph"{
+            _ = segue.destination as! graphViewController
+        }
+    }
     // posting list width in UI
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
