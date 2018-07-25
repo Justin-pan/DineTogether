@@ -154,6 +154,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
                         self.tableView.reloadData()
                     }
                     print(posts)
+                    var room  = rooms(roomName: userInfo.shared.email)
+                    roomManager.SharedInstance.roomList.insert(room, at: 0)
+                    SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", userInfo.shared.email)
                 case.failure(let error):
                     fatalError("error: \(error)")
                 }

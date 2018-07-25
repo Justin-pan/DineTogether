@@ -10,6 +10,9 @@
 		24394E18C2043ECAC0DDDD3B /* libPods-ABCDUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847C76C0948B6D0C0AA9C2FD /* libPods-ABCDUITests.a */; };
 		52790F4620F85DFC004E42F6 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52E637C020F85AF900D171B0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		849BCA6C21091D6B002AB500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BCA6B21091D6B002AB500 /* Message.swift */; };
+		849BCA6F21091EFC002AB500 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BCA6E21091EFC002AB500 /* SocketManager.swift */; };
+		849BCA7121092067002AB500 /* Rooms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BCA7021092067002AB500 /* Rooms.swift */; };
 		84AE062F2106DAC200AF57E5 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84AE062C2106DAB100AF57E5 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84AE06312106DAF900AF57E5 /* graphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AE06302106DAF900AF57E5 /* graphViewController.swift */; };
 		9080D8DC20E99855009951F4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9080D8DB20E99855009951F4 /* AppDelegate.swift */; };
@@ -100,6 +103,9 @@
 		52790F4320F85DDD004E42F6 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E60DB95086240C92A436D63 /* Pods-ABCD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCD.release.xcconfig"; path = "Pods/Target Support Files/Pods-ABCD/Pods-ABCD.release.xcconfig"; sourceTree = "<group>"; };
 		847C76C0948B6D0C0AA9C2FD /* libPods-ABCDUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ABCDUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		849BCA6B21091D6B002AB500 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		849BCA6E21091EFC002AB500 /* SocketManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
+		849BCA7021092067002AB500 /* Rooms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rooms.swift; sourceTree = "<group>"; };
 		84AE06262106DAB100AF57E5 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Charts.xcodeproj; sourceTree = "<group>"; };
 		84AE06302106DAF900AF57E5 /* graphViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = graphViewController.swift; path = ../graphViewController.swift; sourceTree = "<group>"; };
 		8D94CA3A3A1F2605BC128FC0 /* Pods-ABCD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCD.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCD/Pods-ABCD.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +244,9 @@
 				9080D8DD20E99855009951F4 /* signInVC.swift */,
 				90E7904420EAE493001DEF7D /* FirstViewController.swift */,
 				A7B8266D20F97AD900E8AB8A /* ChatViewController.swift */,
+				849BCA6B21091D6B002AB500 /* Message.swift */,
+				849BCA7021092067002AB500 /* Rooms.swift */,
+				849BCA6E21091EFC002AB500 /* SocketManager.swift */,
 				90E7904620EAE4BD001DEF7D /* SecondViewController.swift */,
 				90E7904820EAE4D7001DEF7D /* ThirdViewController.swift */,
 				9080D8DF20E99855009951F4 /* Main.storyboard */,
@@ -534,15 +543,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849BCA7121092067002AB500 /* Rooms.swift in Sources */,
 				90E7904920EAE4D7001DEF7D /* ThirdViewController.swift in Sources */,
 				A70E184E20F878FF00D90F4C /* SegueLeft.swift in Sources */,
 				A70E185020F8790A00D90F4C /* SegueRight.swift in Sources */,
 				C97860CE20EB2E8500D5F9DD /* networking.swift in Sources */,
 				90E7904720EAE4BD001DEF7D /* SecondViewController.swift in Sources */,
 				90E7904520EAE493001DEF7D /* FirstViewController.swift in Sources */,
+				849BCA6C21091D6B002AB500 /* Message.swift in Sources */,
 				9080D8DE20E99855009951F4 /* signInVC.swift in Sources */,
 				84AE06312106DAF900AF57E5 /* graphViewController.swift in Sources */,
 				A7B8266E20F97AD900E8AB8A /* ChatViewController.swift in Sources */,
+				849BCA6F21091EFC002AB500 /* SocketManager.swift in Sources */,
 				9080D8DC20E99855009951F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
