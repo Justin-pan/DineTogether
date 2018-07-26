@@ -71,7 +71,7 @@ class ChatViewController: MessagesViewController{
                     DispatchQueue.main.async {
                         self?.messageList.append(message)
                         self?.messagesCollectionView.insertSections([(self?.messageList.count)! - 1])
-                        
+                        self?.messagesCollectionView.scrollToBottom()
                     }
                 }
             }
