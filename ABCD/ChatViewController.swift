@@ -28,7 +28,6 @@ class ChatViewController: MessagesViewController{
                 self.messagesCollectionView.scrollToBottom()
             }
         }
-        addSocketHandlers()
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
@@ -36,12 +35,14 @@ class ChatViewController: MessagesViewController{
         messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
         scrollsToBottomOnKeybordBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
+        messagesCollectionView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(ChatViewController.addSocketHandlers), for: .valueChanged)
     }
     @IBAction func goBackToParent(_ sender: Any){
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }
-    func addSocketHandlers(){
+    @objc func addSocketHandlers(){
         SocketIOManager.SharedInstance.defaultSocket.on("message"){[weak self] data, ack in
             if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
                 if let text: String = data[1] as? String, let id = data[2] as? String, let name = data[3] as? String, let date = data[4] as? String, let messageID = data[5] as? String{
