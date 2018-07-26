@@ -149,6 +149,7 @@ extension ChatViewController: MessageInputBarDelegate{
                 let message = Message(attributedText: attributedText, sender: currentSender(), messageId: messageID, date: Date())
                 messageList.append(message)
                 messagesCollectionView.insertSections([messageList.count - 1])
+                messagesCollectionView.scrollToBottom()
                 inputBar.inputTextView.text = ""
                 if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == roomName}){
                     room.messageList.append(message)
