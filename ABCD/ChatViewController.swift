@@ -23,12 +23,16 @@ class ChatViewController: MessagesViewController{
         super.viewDidLoad()
         DispatchQueue.global(qos: .userInitiated).async {
             if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == self.roomName}){
-                self.messageList = room.messageList
-                self.messagesCollectionView.reloadData()
-                self.messagesCollectionView.scrollToBottom()
+                DispatchQueue.main.async {
+                    self.messageList = room.messageList
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToBottom()
+                }
             }else{
-                self.messagesCollectionView.reloadData()
-                self.messagesCollectionView.scrollToBottom()
+                DispatchQueue.main.async{
+                    self.messagesCollectionView.reloadData()
+                    self.messagesCollectionView.scrollToBottom()
+                }
             }
         }
         messagesCollectionView.messagesDataSource = self
@@ -65,9 +69,9 @@ class ChatViewController: MessagesViewController{
                     let sendDate = self?.formatter.date(from: date)
                     let message = Message(attributedText: attributedText, sender: sender, messageId: messageID, date: sendDate!)
                     DispatchQueue.main.async {
-                        self?.messageList.insert(message, at: 0)
-                        self?.messagesCollectionView.reloadDataAndKeepOffset()
-                        self?.refreshControl.endRefreshing()
+                        self?.messageList.append(message)
+                        self?.messagesCollectionView.insertSections([(self?.messageList.count)! - 1])
+                        
                     }
                 }
             }
@@ -145,6 +149,7 @@ extension ChatViewController: MessageInputBarDelegate{
                 let message = Message(attributedText: attributedText, sender: currentSender(), messageId: messageID, date: Date())
                 messageList.append(message)
                 messagesCollectionView.insertSections([messageList.count - 1])
+                inputBar.inputTextView.text = ""
                 SocketIOManager.SharedInstance.defaultSocket.emit("message", roomname, text, email, name, date, messageID)
             }
         }
