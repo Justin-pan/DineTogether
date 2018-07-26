@@ -106,6 +106,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
+            SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", self.posts[row].email)
             let childVC:ChatViewController = ChatViewController()
             childVC.roomName = self.posts[row].email
             self.addChildViewController(childVC)
