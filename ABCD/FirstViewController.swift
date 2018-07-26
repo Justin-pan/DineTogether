@@ -137,7 +137,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             let distance = alert.textFields![1].text
             let date = Date()
             let formatter = DateFormatter()
-            formatter.dateFormat = "eeee, h:m a"
+            formatter.dateFormat = "eeee, h:mm a"
             let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
             let formattedNewDate = formatter.string(from: newDate!)
             let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)

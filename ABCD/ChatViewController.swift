@@ -26,6 +26,9 @@ class ChatViewController: MessagesViewController{
                 self.messageList = room.messageList
                 self.messagesCollectionView.reloadData()
                 self.messagesCollectionView.scrollToBottom()
+            }else{
+                self.messagesCollectionView.reloadData()
+                self.messagesCollectionView.scrollToBottom()
             }
         }
         messagesCollectionView.messagesDataSource = self
@@ -36,13 +39,13 @@ class ChatViewController: MessagesViewController{
         scrollsToBottomOnKeybordBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
         messagesCollectionView.addSubview(refreshControl)
-        refreshControl.addTarget(self, action: #selector(ChatViewController.addSocketHandlers), for: .valueChanged)
+        addSocketHandlers()
     }
     @IBAction func goBackToParent(_ sender: Any){
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }
-    @objc func addSocketHandlers(){
+    func addSocketHandlers(){
         SocketIOManager.SharedInstance.defaultSocket.on("message"){[weak self] data, ack in
             if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
                 if let text: String = data[1] as? String, let id = data[2] as? String, let name = data[3] as? String, let date = data[4] as? String, let messageID = data[5] as? String{
