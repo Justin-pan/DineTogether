@@ -106,12 +106,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
-            let childVC = ChatViewController()
+            let childVC:ChatViewController = ChatViewController()
             childVC.roomName = self.posts[row].email
             self.addChildViewController(childVC)
             self.view.addSubview(childVC.view)
             childVC.didMove(toParentViewController: self)
-            self.becomeFirstResponder()
+            childVC.becomeFirstResponder()
         }))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         
