@@ -106,7 +106,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
-            let childVC = MessagesViewController()
+            let childVC = ChatViewController()
+            childVC.roomName = self.posts[row].email
             self.addChildViewController(childVC)
             self.view.addSubview(childVC.view)
             childVC.didMove(toParentViewController: self)

@@ -92,6 +92,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                     fatalError("error: \(error.localizedDescription)")
                 }
             }
+            SocketIOManager.SharedInstance.defaultSocket.emit("signIn", userInfo.shared.fullName)
             self.performSegue(withIdentifier: "ThirdViewController", sender: self)
         } else {
             print("\(error.localizedDescription)")
