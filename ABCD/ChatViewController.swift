@@ -57,7 +57,7 @@ class ChatViewController: MessagesViewController{
                     let sender: Sender = Sender(id: id, displayName: name)
                     let sendDate = self?.formatter.date(from: date)
                     let message = Message(attributedText: attributedText, sender: sender, messageId: messageID, date: sendDate!)
-                    room.messageList.insert(message, at: 0)
+                    room.messageList.append(message)
                 }
             }else{
                 
@@ -150,6 +150,9 @@ extension ChatViewController: MessageInputBarDelegate{
                 messageList.append(message)
                 messagesCollectionView.insertSections([messageList.count - 1])
                 inputBar.inputTextView.text = ""
+                if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == roomName}){
+                    room.messageList.append(message)
+                }
                 SocketIOManager.SharedInstance.defaultSocket.emit("message", roomname, text, email, name, date, messageID)
             }
         }
