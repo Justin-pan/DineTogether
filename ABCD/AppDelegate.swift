@@ -8,13 +8,19 @@
 
 import UIKit
 import GoogleSignIn
+import MessageKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
 
     var window: UIWindow?
-
+    lazy var formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.dateFormat = "eeee, h:m a"
+        return formatter
+    }()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -61,6 +67,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         }else{
             SocketIOManager.SharedInstance.defaultSocket.emit("reconnect", userInfo.shared.fullName)
         }
+        SocketIOManager.SharedInstance.defaultSocket.on("message"){[weak self] data, ack in
+            print("Is this happening?")
+            if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
+                if let text: String = data[1] as? String, let id = data[2] as? String, let name = data[3] as? String, let date = data[4] as? String, let messageID = data[5] as? String{
+                    let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor.blue])
+                    let sender: Sender = Sender(id: id, displayName: name)
+                    let sendDate = self?.formatter.date(from: date)
+                    let message = Message(attributedText: attributedText, sender: sender, messageId: messageID, date: sendDate!)
+                    room.messageList.append(message)
+                }
+            }else{
+                print("This should never happen")
+            }
+        }
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -71,4 +91,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 
 
 }
+
 

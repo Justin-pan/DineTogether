@@ -10,7 +10,6 @@ import Foundation
 import MessageKit
 
 class ChatViewController: MessagesViewController{
-    let refreshControl = UIRefreshControl()
     var messageList: [Message] = []
     lazy var formatter: DateFormatter = {
        let formatter = DateFormatter()
@@ -42,16 +41,21 @@ class ChatViewController: MessagesViewController{
         messageInputBar.sendButton.tintColor = UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1)
         scrollsToBottomOnKeybordBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
-        messagesCollectionView.addSubview(refreshControl)
+        /*let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+        navigationBar.barTintColor = UIColor.lightGray
+        let button = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBackToParent(_:)))
+        let navigationItem = UINavigationItem(title: roomName + "'s room")
+        navigationItem.leftBarButtonItem = button
+        navigationBar.items = [navigationItem]*/
         addSocketHandlers()
     }
-    @IBAction func goBackToParent(_ sender: Any){
+    @objc func goBackToParent(_ sender: UIBarButtonItem!){
         self.view.removeFromSuperview()
         self.removeFromParentViewController()
     }
     func addSocketHandlers(){
         SocketIOManager.SharedInstance.defaultSocket.on("message"){[weak self] data, ack in
-            if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
+            /*if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
                 if let text: String = data[1] as? String, let id = data[2] as? String, let name = data[3] as? String, let date = data[4] as? String, let messageID = data[5] as? String{
                     let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor.blue])
                     let sender: Sender = Sender(id: id, displayName: name)
@@ -61,7 +65,7 @@ class ChatViewController: MessagesViewController{
                 }
             }else{
                 
-            }
+            }*/
             if(data[0] as? String == self?.roomName){
                 if let text: String = data[1] as? String, let id = data[2] as? String, let name = data[3] as? String, let date = data[4] as? String, let messageID = data[5] as? String{
                     let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont.systemFont(ofSize: 15), .foregroundColor: UIColor.blue])

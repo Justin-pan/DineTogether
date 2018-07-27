@@ -211,34 +211,6 @@
             </objects>
             <point key="canvasLocation" x="-180" y="786.65667166416802"/>
         </scene>
-        <!--Chat View Controller-->
-        <scene sceneID="hRl-6h-Zf6">
-            <objects>
-                <viewController storyboardIdentifier="ChatViewController" id="37k-x9-OZ0" customClass="ChatViewController" customModule="ABCD" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="w8I-h8-ecM"/>
-                        <viewControllerLayoutGuide type="bottom" id="2yx-mW-Dcj"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tXh-aX-bes">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKo-c0-mWe">
-                                <rect key="frame" x="22" y="20" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="goBackToParent:" destination="37k-x9-OZ0" eventType="touchUpInside" id="mDF-Tb-P1X"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6qT-Sx-2gd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="838" y="989"/>
-        </scene>
         <!--signInVC-->
         <scene sceneID="AdH-XN-Rdf">
             <objects>
@@ -523,7 +495,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2V1-NL-Dbf"/>
-        <segue reference="f1V-C4-cuP"/>
-        <segue reference="dd3-nO-y2b"/>
+        <segue reference="3aY-Fw-aUa"/>
+        <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>
 </document>

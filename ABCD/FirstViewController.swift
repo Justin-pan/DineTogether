@@ -119,8 +119,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
             SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", self.posts[row].email)
-            var room = rooms(roomName: self.posts[row].email)
-            roomManager.SharedInstance.roomList.append(room)
+            if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == self.posts[row].email}){
+                
+            }else{
+                let room = rooms(roomName: self.posts[row].email)
+                roomManager.SharedInstance.roomList.append(room)
+            }
             let childVC:ChatViewController = ChatViewController()
             childVC.roomName = self.posts[row].email
             self.addChildViewController(childVC)
@@ -170,7 +174,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
                         self.tableView.reloadData()
                     }
                     print(posts)
-                    var room  = rooms(roomName: userInfo.shared.email)
+                    let room  = rooms(roomName: userInfo.shared.email)
                     roomManager.SharedInstance.roomList.insert(room, at: 0)
                     SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", userInfo.shared.email)
                 case.failure(let error):
