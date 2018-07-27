@@ -27,7 +27,7 @@ open class BarChartData: BarLineScatterCandleBubbleChartData
     /// The width of the bars on the x-axis, in values (not pixels)
     ///
     /// **default**: 0.85
-    @objc open var barWidth = Double(0.85)
+    @objc open var barWidth = Double(0.75)
     
     /// Groups all BarDataSet objects this data object holds together by modifying the x-value of their entries.
     /// Previously set x-values of entries will be overwritten. Leaves space between bars and groups as specified by the parameters.
@@ -39,11 +39,11 @@ open class BarChartData: BarLineScatterCandleBubbleChartData
     @objc open func groupBars(fromX: Double, groupSpace: Double, barSpace: Double)
     {
         let setCount = _dataSets.count
-        if setCount <= 1
-        {
-            print("BarData needs to hold at least 2 BarDataSets to allow grouping.", terminator: "\n")
-            return
-        }
+//        if setCount <= 1
+//        {
+//            print("BarData needs to hold at least 2 BarDataSets to allow grouping.", terminator: "\n")
+//            return
+//        }
         
         let max = maxEntryCountSet
         let maxEntryCount = max?.entryCount ?? 0

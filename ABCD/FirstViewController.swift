@@ -36,6 +36,18 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             userInfo.shared.LastPost = Posting(_id: "",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
         }
         
+        if(userInfo.shared.LastPost.time == 0){
+            print("sdadsa")
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.inputDialog()
+            }
+        
+        }
+        
         if (userInfo.shared.ExpiryTime != -1)&&(CurrTime.timeIntervalSince(userInfo.shared.ExpiryDate) < userInfo.shared.ExpiryTime*60){
             posts=userInfo.shared.SavePost
             self.tableView.reloadData()
