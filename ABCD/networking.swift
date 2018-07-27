@@ -25,6 +25,15 @@ struct Posting: Codable {
     let latitude: Double
     let longitude: Double
 }
+struct recievingFriend : Codable{
+    let friendName : String
+    let friendId : String
+}
+struct sendingFriend : Codable{
+    let userId : String
+    let friendName : String
+    let friendId : String
+}
 //enumeration defines common type for a group of related values and enables you to work with those values in a type safe way
 //in this case, the enum describes cases of a result (success, failure) with a value
 enum Result<Value> {
@@ -196,6 +205,38 @@ func signInUser(user: User, completion: ((Result<User>) -> Void)?){
                 }
             } else {
                 let error = NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Data was not retrieved from request"]) as Error
+                completion?(.failure(error))
+            }
+        }
+    }
+    task.resume()
+}
+func getGraph(completion : ((Result<[Double]>) -> Void)?){
+    //Creating the url which will be used for the GET request
+    var urlComponents = URLComponents()
+    //request scheme
+    urlComponents.scheme = "https"
+    //request host
+    urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
+    //request path
+    urlComponents.path = "/getTimeStats"
+    guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+    //create the request
+    var request = URLRequest(url: url)
+    request.httpMethod = "GET"
+    //configurations for the URLSession
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    //sending the request and dealing with the response
+    let task = session.dataTask(with: request){(responseData, response, responseError) in
+        if let error = responseError{
+            completion?(.failure(error))
+        }else if let data = responseData{
+            do {
+                let graphArray = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [Double]
+                print("This is graph array \(graphArray)")
+                completion?(.success(graphArray))
+            }catch{
                 completion?(.failure(error))
             }
         }

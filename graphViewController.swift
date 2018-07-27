@@ -14,8 +14,16 @@ class graphViewController: UIViewController{
         super.viewDidLoad()
 
         let hours = ["12:00am","","","3:00am","","","6:00am","","","9:00am","","","12:00pm","","","3:00pm","","","6:00pm","","","9:00pm","",""]
-        let freq = [0.0,0.0,0.0,1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0,10.0,11.0,10.0,9.0,11.0,16.0,9.0,6.0,5.0,4.0,3.0,2.0]
-        setChart(dataPoints: hours,values: freq)
+        getGraph(){(result) in
+            DispatchQueue.main.async {
+                switch result{
+                case .success(let freq):
+                    self.setChart(dataPoints: hours,values: freq)
+                case .failure(let error):
+                    print(error)
+            }
+            }
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
