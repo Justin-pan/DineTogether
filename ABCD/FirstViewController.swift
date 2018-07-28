@@ -114,7 +114,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         let row = indexPath.row
         
         let alert = UIAlertController(title: "Posting by\n\(posts[row].fullName)\n(\(posts[row].email))",
-            message: "/nAt a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes",
+            message: "At a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes",
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
@@ -142,7 +142,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     //input dialog for creating posts
     func inputDialog(){
         //creating the alert controller
-        let alert = UIAlertController(title: "Posting details", message: "Please choose how long you are willing to wait from now and a distance at which others can see your post", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Share a new post", message: "Please confirm how long you're available for, and the distance you're willing to travel.", preferredStyle: .alert)
         //actions to be done in the alert controller
         let cancelAction = Action.init(title: "Cancel", style: .default, handler: {(Action) -> Void in
             self.actionString = "Cancel"

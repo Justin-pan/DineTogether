@@ -66,12 +66,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo1" translatesAutoresizingMaskIntoConstraints="NO" id="GjN-CY-goS">
-                                <rect key="frame" x="16" y="28" width="343" height="167"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="4TD-Oo-jje"/>
-                                    <constraint firstAttribute="height" constant="167" id="TuJ-Id-UWc"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="logovert" translatesAutoresizingMaskIntoConstraints="NO" id="GjN-CY-goS">
+                                <rect key="frame" x="16" y="28" width="343" height="564"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXE-VZ-0gd" userLabel="SIgnInButton">
                                 <rect key="frame" x="16" y="600" width="343" height="51"/>
@@ -87,10 +83,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="rXE-VZ-0gd" secondAttribute="bottom" constant="16" id="IqP-GG-i8s"/>
+                            <constraint firstItem="rXE-VZ-0gd" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-16" id="IqP-GG-i8s"/>
                             <constraint firstItem="GjN-CY-goS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="KvS-UD-8Uw"/>
                             <constraint firstItem="rXE-VZ-0gd" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kdX-bB-cxc"/>
                             <constraint firstItem="GjN-CY-goS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="meO-GP-9vW"/>
+                            <constraint firstItem="rXE-VZ-0gd" firstAttribute="top" secondItem="GjN-CY-goS" secondAttribute="bottom" constant="8" id="pyP-85-1cw"/>
                             <constraint firstItem="rXE-VZ-0gd" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="q1o-Lz-JC1"/>
                             <constraint firstItem="GjN-CY-goS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="u60-ee-ANe"/>
                         </constraints>
@@ -130,7 +127,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="eae-Ra-wTK" secondAttribute="height" multiplier="109:30" id="fLR-dh-5CY"/>
                                 </constraints>
-                                <state key="normal" image="postsblue"/>
+                                <state key="normal" image="postsblack"/>
                                 <connections>
                                     <segue destination="r6j-vG-W7p" kind="show" animates="NO" id="hgq-HQ-UlS"/>
                                 </connections>
@@ -140,7 +137,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hRn-m2-JK6" secondAttribute="height" multiplier="109:30" id="eCF-sz-ira"/>
                                 </constraints>
-                                <state key="normal" image="profileblue"/>
+                                <state key="normal" image="profileblack"/>
                                 <connections>
                                     <segue destination="qCU-9y-ZQZ" kind="show" animates="NO" id="JMI-mi-uJ8"/>
                                 </connections>
@@ -150,7 +147,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="jXk-d1-uKE" secondAttribute="height" multiplier="109:30" id="EII-pS-DQi"/>
                                 </constraints>
-                                <state key="normal" image="messagesblack">
+                                <state key="normal" image="messagesblue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -229,7 +226,7 @@
                                     <constraint firstAttribute="width" secondItem="cyn-SS-oWK" secondAttribute="height" multiplier="109:30" id="4f6-PA-fcR"/>
                                     <constraint firstAttribute="width" secondItem="cyn-SS-oWK" secondAttribute="height" multiplier="109:30" id="GMq-jJ-XvY"/>
                                 </constraints>
-                                <state key="normal" image="postsblue"/>
+                                <state key="normal" image="postsblack"/>
                                 <connections>
                                     <segue destination="r6j-vG-W7p" kind="show" animates="NO" id="occ-Ho-MYk"/>
                                 </connections>
@@ -240,7 +237,7 @@
                                     <constraint firstAttribute="width" secondItem="gaK-YH-vyW" secondAttribute="height" multiplier="109:30" id="3zz-m5-B5S"/>
                                     <constraint firstAttribute="width" secondItem="gaK-YH-vyW" secondAttribute="height" multiplier="109:30" id="Xez-6P-E1e"/>
                                 </constraints>
-                                <state key="normal" image="messagesblue"/>
+                                <state key="normal" image="messagesblack"/>
                                 <connections>
                                     <segue destination="dBG-8c-CaO" kind="show" animates="NO" id="Jmx-cQ-dSl"/>
                                 </connections>
@@ -251,7 +248,7 @@
                                     <constraint firstAttribute="width" secondItem="PNE-FO-PnN" secondAttribute="height" multiplier="109:30" id="0Rn-xY-57L"/>
                                     <constraint firstAttribute="width" secondItem="PNE-FO-PnN" secondAttribute="height" multiplier="109:30" id="YEe-Z7-ZJL"/>
                                 </constraints>
-                                <state key="normal" image="profileblack">
+                                <state key="normal" image="profileblue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -341,7 +338,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mzC-QD-HgP" secondAttribute="height" multiplier="109:30" id="RQT-9l-VCM"/>
                                 </constraints>
-                                <state key="normal" image="postsblack">
+                                <state key="normal" image="postsblue">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                             </button>
@@ -350,7 +347,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Fwi-fS-KlX" secondAttribute="height" multiplier="109:30" id="kfx-sU-Bml"/>
                                 </constraints>
-                                <state key="normal" image="messagesblue"/>
+                                <state key="normal" image="messagesblack"/>
                                 <connections>
                                     <segue destination="dBG-8c-CaO" kind="show" animates="NO" id="dd3-nO-y2b"/>
                                 </connections>
@@ -360,7 +357,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HF8-3f-SFd" secondAttribute="height" multiplier="109:30" id="03k-U6-xuN"/>
                                 </constraints>
-                                <state key="normal" image="profileblue"/>
+                                <state key="normal" image="profileblack"/>
                                 <connections>
                                     <segue destination="qCU-9y-ZQZ" kind="show" animates="NO" id="6mG-rD-rwz"/>
                                 </connections>
@@ -480,8 +477,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logo1" width="151" height="73"/>
         <image name="logoutblue" width="43" height="43"/>
+        <image name="logovert" width="1251" height="1501"/>
         <image name="messages1" width="30" height="30"/>
         <image name="messagesblack" width="30" height="30"/>
         <image name="messagesblue" width="30" height="30"/>
@@ -494,7 +491,7 @@
         <image name="profileblue" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2V1-NL-Dbf"/>
+        <segue reference="occ-Ho-MYk"/>
         <segue reference="3aY-Fw-aUa"/>
         <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>

@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
-        formatter.dateFormat = "eeee, h:m a"
+        formatter.dateFormat = "eeee, h:mm a"
         return formatter
     }()
 
