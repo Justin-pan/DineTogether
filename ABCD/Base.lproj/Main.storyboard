@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -404,13 +404,12 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8k-kR-dvP" userLabel="newpost">
                                 <rect key="frame" x="316" y="28" width="43" height="43"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="43" id="fRz-Be-oKf"/>
-                                    <constraint firstAttribute="height" constant="43" id="nju-8b-sgL"/>
+                                    <constraint firstAttribute="width" secondItem="M8k-kR-dvP" secondAttribute="height" multiplier="1:1" id="IfG-v5-FjZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                <inset key="titleEdgeInsets" minX="-90" minY="50" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="New Post" image="newpost">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="titleEdgeInsets" minX="-100" minY="48" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="newpost">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addPostsTouch:" destination="r6j-vG-W7p" eventType="touchUpInside" id="u9Z-0S-R4t"/>
@@ -460,10 +459,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6I-s6-NKf">
-                                <rect key="frame" x="236" y="41" width="43" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Graph"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6I-s6-NKf">
+                                <rect key="frame" x="139" y="34" width="97" height="30"/>
+                                <state key="normal" title="Activity Graph"/>
                                 <connections>
                                     <action selector="showGraph:" destination="r6j-vG-W7p" eventType="touchUpInside" id="mn6-bn-G18"/>
                                 </connections>
@@ -472,11 +470,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="M8k-kR-dvP" firstAttribute="top" secondItem="Duz-Xv-mrj" secondAttribute="bottom" constant="8" id="0ng-q0-1ui"/>
                             <constraint firstItem="Fwi-fS-KlX" firstAttribute="height" secondItem="mzC-QD-HgP" secondAttribute="height" id="2Nm-Q9-SNn"/>
                             <constraint firstItem="RmV-Nd-h9k" firstAttribute="top" secondItem="Duz-Xv-mrj" secondAttribute="bottom" constant="8" id="9VM-MT-tOt"/>
                             <constraint firstItem="HF8-3f-SFd" firstAttribute="leading" secondItem="Fwi-fS-KlX" secondAttribute="trailing" constant="8" id="Gbt-Jw-tIE"/>
                             <constraint firstItem="HF8-3f-SFd" firstAttribute="height" secondItem="mzC-QD-HgP" secondAttribute="height" id="H0J-SI-ZaP"/>
                             <constraint firstItem="ezc-fa-tQa" firstAttribute="top" secondItem="HF8-3f-SFd" secondAttribute="bottom" constant="16" id="H5G-yf-UtD"/>
+                            <constraint firstItem="r6I-s6-NKf" firstAttribute="leading" secondItem="RmV-Nd-h9k" secondAttribute="trailing" constant="47" id="HxY-Nw-hzb"/>
+                            <constraint firstItem="M8k-kR-dvP" firstAttribute="trailing" secondItem="fVE-Yl-SwW" secondAttribute="trailingMargin" id="Ji5-5c-X4N"/>
                             <constraint firstItem="ezc-fa-tQa" firstAttribute="top" secondItem="Fwi-fS-KlX" secondAttribute="bottom" constant="16" id="NNh-B8-giK"/>
                             <constraint firstItem="ezc-fa-tQa" firstAttribute="top" secondItem="mzC-QD-HgP" secondAttribute="bottom" constant="16" id="PYg-EQ-hE0"/>
                             <constraint firstItem="Fwi-fS-KlX" firstAttribute="leading" secondItem="mzC-QD-HgP" secondAttribute="trailing" constant="8" id="QZr-0T-g7m"/>
@@ -484,10 +485,13 @@
                             <constraint firstItem="M8k-kR-dvP" firstAttribute="trailing" secondItem="fVE-Yl-SwW" secondAttribute="trailingMargin" id="T7P-Ff-Jgb"/>
                             <constraint firstItem="Fwi-fS-KlX" firstAttribute="width" secondItem="mzC-QD-HgP" secondAttribute="width" id="Tdv-bv-fos"/>
                             <constraint firstItem="of4-U6-qwn" firstAttribute="trailing" secondItem="fVE-Yl-SwW" secondAttribute="trailingMargin" id="Xiw-X4-aZq"/>
+                            <constraint firstItem="r6I-s6-NKf" firstAttribute="top" secondItem="Duz-Xv-mrj" secondAttribute="bottom" constant="14" id="Yj6-pM-ETl"/>
+                            <constraint firstItem="M8k-kR-dvP" firstAttribute="height" secondItem="RmV-Nd-h9k" secondAttribute="height" id="Zy6-7H-fP9"/>
                             <constraint firstItem="mzC-QD-HgP" firstAttribute="top" secondItem="of4-U6-qwn" secondAttribute="bottom" constant="8" id="buN-U2-0Qg"/>
                             <constraint firstItem="of4-U6-qwn" firstAttribute="top" secondItem="RmV-Nd-h9k" secondAttribute="bottom" constant="8" id="fFr-Zu-9gK"/>
                             <constraint firstItem="RmV-Nd-h9k" firstAttribute="leading" secondItem="fVE-Yl-SwW" secondAttribute="leadingMargin" id="qpk-xg-Db9"/>
                             <constraint firstItem="mzC-QD-HgP" firstAttribute="leading" secondItem="fVE-Yl-SwW" secondAttribute="leadingMargin" id="rUq-Im-oPe"/>
+                            <constraint firstItem="r6I-s6-NKf" firstAttribute="bottom" secondItem="of4-U6-qwn" secondAttribute="top" constant="-15" id="tFR-hJ-UvV"/>
                             <constraint firstItem="HF8-3f-SFd" firstAttribute="trailing" secondItem="fVE-Yl-SwW" secondAttribute="trailingMargin" id="tdD-JD-jN8"/>
                             <constraint firstItem="HF8-3f-SFd" firstAttribute="width" secondItem="mzC-QD-HgP" secondAttribute="width" id="v0p-JC-MWR"/>
                             <constraint firstItem="of4-U6-qwn" firstAttribute="leading" secondItem="fVE-Yl-SwW" secondAttribute="leadingMargin" id="ypq-mz-bcE"/>
@@ -519,12 +523,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="logoutblue" width="43" height="43"/>
+        <image name="logoutblue" width="100" height="100"/>
         <image name="logovert" width="1251" height="1501"/>
         <image name="messages1" width="30" height="30"/>
         <image name="messagesblack" width="30" height="30"/>
         <image name="messagesblue" width="30" height="30"/>
-        <image name="newpost" width="90" height="90"/>
+        <image name="newpost" width="100" height="100"/>
         <image name="posts1" width="30" height="30"/>
         <image name="postsblack" width="30" height="30"/>
         <image name="postsblue" width="30" height="30"/>
@@ -533,8 +537,8 @@
         <image name="profileblue" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="occ-Ho-MYk"/>
-        <segue reference="emR-Zr-z9b"/>
-        <segue reference="dd3-nO-y2b"/>
+        <segue reference="udQ-8f-G03"/>
+        <segue reference="JMI-mi-uJ8"/>
+        <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>
 </document>
