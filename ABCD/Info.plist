@@ -56,6 +56,17 @@
 	<string>This application requires location services to work</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>This application requires location services to work</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Robotol-Thin.ttf</string>
+		<string>Robotol-Regular.ttf</string>
+		<string>Robotol-Bold.ttf</string>
+		<string>Robotol-Black.ttf</string>
+	</array>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This application requires location services to work</string>
 </dict>

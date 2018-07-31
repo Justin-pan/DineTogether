@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		24394E18C2043ECAC0DDDD3B /* libPods-ABCDUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 847C76C0948B6D0C0AA9C2FD /* libPods-ABCDUITests.a */; };
+		30F4A40021102D2C00FE08A6 /* Robotol-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F4A3FD21102CDD00FE08A6 /* Robotol-Regular.ttf */; };
+		30F4A40121102D2E00FE08A6 /* Robotol-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F4A3FE21102CDD00FE08A6 /* Robotol-Thin.ttf */; };
+		30F4A40221102D3000FE08A6 /* Robotol-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F4A3FC21102CDC00FE08A6 /* Robotol-Bold.ttf */; };
+		30F4A40421102D3400FE08A6 /* Robotol-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30F4A3FB21102CDC00FE08A6 /* Robotol-Black.ttf */; };
 		52790F4620F85DFC004E42F6 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		52E637C020F85AF900D171B0 /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		849BCA6C21091D6B002AB500 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BCA6B21091D6B002AB500 /* Message.swift */; };
@@ -98,6 +102,10 @@
 
 /* Begin PBXFileReference section */
 		11CF01CFB9438209120405B7 /* Pods-ABCDUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABCDUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ABCDUITests/Pods-ABCDUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		30F4A3FB21102CDC00FE08A6 /* Robotol-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Robotol-Black.ttf"; sourceTree = "<group>"; };
+		30F4A3FC21102CDC00FE08A6 /* Robotol-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Robotol-Bold.ttf"; sourceTree = "<group>"; };
+		30F4A3FD21102CDD00FE08A6 /* Robotol-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Robotol-Regular.ttf"; sourceTree = "<group>"; };
+		30F4A3FE21102CDD00FE08A6 /* Robotol-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Robotol-Thin.ttf"; sourceTree = "<group>"; };
 		52790F3F20F85DD3004E42F6 /* MessageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MessageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52790F4120F85DD8004E42F6 /* SocketIO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SocketIO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52790F4320F85DDD004E42F6 /* Starscream.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Starscream.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +194,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30F4A3FF21102CFA00FE08A6 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				30F4A3FE21102CDD00FE08A6 /* Robotol-Thin.ttf */,
+				30F4A3FD21102CDD00FE08A6 /* Robotol-Regular.ttf */,
+				30F4A3FC21102CDC00FE08A6 /* Robotol-Bold.ttf */,
+				30F4A3FB21102CDC00FE08A6 /* Robotol-Black.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		55A0A4B334E1B8866985FDE5 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +255,7 @@
 		9080D8DA20E99855009951F4 /* ABCD */ = {
 			isa = PBXGroup;
 			children = (
+				30F4A3FF21102CFA00FE08A6 /* Fonts */,
 				9080D8DB20E99855009951F4 /* AppDelegate.swift */,
 				84AE06302106DAF900AF57E5 /* graphViewController.swift */,
 				C97860CD20EB2E8500D5F9DD /* networking.swift */,
@@ -440,10 +460,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30F4A40421102D3400FE08A6 /* Robotol-Black.ttf in Resources */,
+				30F4A40021102D2C00FE08A6 /* Robotol-Regular.ttf in Resources */,
 				90FCF2F320E9CC58005D0395 /* GoogleSignIn.bundle in Resources */,
 				9080D8E620E99855009951F4 /* LaunchScreen.storyboard in Resources */,
 				9080D8E320E99855009951F4 /* Assets.xcassets in Resources */,
+				30F4A40221102D3000FE08A6 /* Robotol-Bold.ttf in Resources */,
 				9080D8E120E99855009951F4 /* Main.storyboard in Resources */,
+				30F4A40121102D2E00FE08A6 /* Robotol-Thin.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -117,8 +117,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         var actualRestrictionsArr: [String] = []
         actualRestrictionsArr.append("Restrictions:")
-        for (index, element) in preferenceArray.enumerated(){
-            if(element == 1){
+        for (index, element) in preferenceArray.enumerated() {
+            if(element == 1) {
                 actualRestrictionsArr.append(restrictionNames[index])
             }
         }

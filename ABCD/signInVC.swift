@@ -110,7 +110,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                 }
             }
             SocketIOManager.SharedInstance.defaultSocket.emit("signIn", userInfo.shared.fullName)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                 userInfo.shared.preferenceString = self.preferenceString
                 userInfo.shared.savedpreferences = self.preferenceString.flatMap{Int(String($0))}
                 self.performSegue(withIdentifier: "ThirdViewController", sender: self)
