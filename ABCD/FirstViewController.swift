@@ -33,7 +33,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         tableView.delegate = self
         tableView.dataSource = self
         if (userInfo.shared.ExpiryTime != -1)&&(CurrTime.timeIntervalSince(userInfo.shared.ExpiryDate) > userInfo.shared.ExpiryTime*60){
-            userInfo.shared.LastPost = Posting(_id: "",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
+            userInfo.shared.LastPost = Posting(_id: "",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0, preference: "")
         }
         
         if(userInfo.shared.LastPost.time == 0){
@@ -112,9 +112,20 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
+        let restrictionNames = ["Vegetarian", "Vegan", "Pescatarian", "Halal", "Gluten-Free", "Diabetic",  "allergy1", "allergy2", "allergy3", "allergy4"]
+        let preferenceArray = posts[row].preference.flatMap{Int(String($0))}
+        
+        var actualRestrictionsArr: [String] = []
+        actualRestrictionsArr.append("Restrictions:")
+        for (index, element) in preferenceArray.enumerated(){
+            if(element == 1){
+                actualRestrictionsArr.append(restrictionNames[index])
+            }
+        }
+        let newMessage = actualRestrictionsArr.joined(separator: "\n- ")
         
         let alert = UIAlertController(title: "Posting by\n\(posts[row].fullName)\n(\(posts[row].email))",
-            message: "At a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes",
+            message: "At a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes.\n" + newMessage,
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
@@ -166,7 +177,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             formatter.dateFormat = "eeee, h:mm a"
             let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
             let formattedNewDate = formatter.string(from: newDate!)
-            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude)
+            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude, preference: userInfo.shared.preferenceString)
             print(myPost)
             userInfo.shared.LastPost = myPost
             

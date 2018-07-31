@@ -22,15 +22,17 @@ class userInfo {
     var ExpiryDate = Date()
     var SavePost : [Posting] = []
     var ExpiryTime : Double = -1
-    var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
+    var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0, preference: "")
     var description : String = ""
+    var savedpreferences : [Int] = []
+    var preferenceString: String = ""
 }
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate {
     var email: String = ""
     var givenName: String = ""
     var familyName: String = ""
-    var userSign = [User]()
+    var preferenceString : String = ""
     
     @IBOutlet weak var SignInButton: UIButton!
     override func viewDidLoad() {
@@ -81,12 +83,12 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
             userInfo.shared.givenName = user.profile.givenName
             userInfo.shared.familyName = user.profile.familyName
             userInfo.shared.email = user.profile.email
-            let user = User(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, description: "")
+            let user = User(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, description: "", preference: "0000000000")
             signInUser(user: user){(result) in
                 switch result{
                 case .success(let userSign):
-                    self.userSign = [userSign]
-                    print(userSign)
+                    self.preferenceString = userSign.preference
+                    print("When does this happen")
                     getFriends(user: user){(result) in
                         switch result{
                         case .success(let friends):
@@ -108,7 +110,11 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                 }
             }
             SocketIOManager.SharedInstance.defaultSocket.emit("signIn", userInfo.shared.fullName)
-            self.performSegue(withIdentifier: "ThirdViewController", sender: self)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.6){
+                userInfo.shared.preferenceString = self.preferenceString
+                userInfo.shared.savedpreferences = self.preferenceString.flatMap{Int(String($0))}
+                self.performSegue(withIdentifier: "ThirdViewController", sender: self)
+            }
         } else {
             print("\(error.localizedDescription)")
         }
@@ -121,7 +127,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ThirdViewController"{
-            _ = segue.destination as! ThirdViewController
+            let destinationVC = segue.destination as! ThirdViewController
         }
     }
 }
