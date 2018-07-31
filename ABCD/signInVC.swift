@@ -23,6 +23,7 @@ class userInfo {
     var SavePost : [Posting] = []
     var ExpiryTime : Double = -1
     var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0)
+    var description : String = ""
 }
 
 class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, SFSafariViewControllerDelegate {
@@ -86,6 +87,20 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                 case .success(let userSign):
                     self.userSign = [userSign]
                     print(userSign)
+                    getFriends(user: user){(result) in
+                        switch result{
+                        case .success(let friends):
+                            for item in friends{
+                                if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == item.friendName}){
+                                } else {
+                                    let room  = rooms(roomName: item.friendName)
+                                    roomManager.SharedInstance.roomList.append(room)
+                                }
+                            }
+                        case .failure(let error):
+                            fatalError("error: \(error)")
+                        }
+                    }
                     self.SignInButton.setTitle("Proceed",for: .normal)
                     
                 case .failure(let error):

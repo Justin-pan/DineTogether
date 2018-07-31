@@ -27,6 +27,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
+        SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", roomManager.SharedInstance.roomList[row].roomName)
         let childVC:ChatViewController = ChatViewController()
         childVC.roomName = roomManager.SharedInstance.roomList[row].roomName
         self.addChildViewController(childVC)

@@ -124,6 +124,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             }else{
                 let room = rooms(roomName: self.posts[row].email)
                 roomManager.SharedInstance.roomList.append(room)
+                //room should have another name for appearance purposes todo
+                let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomName)
+                sendFriend(friend: friend){(error) in
+                    if let error = error{
+                        fatalError("error: \(error)")
+                    }
+                }
             }
             let childVC:ChatViewController = ChatViewController()
             childVC.roomName = self.posts[row].email
@@ -174,8 +181,18 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
                         self.tableView.reloadData()
                     }
                     print(posts)
-                    let room  = rooms(roomName: userInfo.shared.email)
-                    roomManager.SharedInstance.roomList.insert(room, at: 0)
+                    if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == userInfo.shared.email}){
+                        
+                    } else {
+                        let room  = rooms(roomName: userInfo.shared.email)
+                        roomManager.SharedInstance.roomList.insert(room, at: 0)
+                        let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomName)
+                        sendFriend(friend: friend){(error) in
+                            if let error = error{
+                                fatalError("error: \(error)")
+                            }
+                        }
+                    }
                     SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", userInfo.shared.email)
                 case.failure(let error):
                     fatalError("error: \(error)")
