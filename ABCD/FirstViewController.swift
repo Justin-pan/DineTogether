@@ -103,7 +103,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         
         let row = indexPath.row
         cell.textLabel?.text = posts[row].fullName
-        cell.detailTextLabel?.text = "Available until: " + String(posts[row].date)
+        cell.detailTextLabel?.numberOfLines = 2
+        cell.detailTextLabel?.text = "Available until: " + String(posts[row].date) + "\nMaximum distance: " + String(posts[row].distance) + "km"
         
         return cell
     }
@@ -112,23 +113,40 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let row = indexPath.row
-        let restrictionNames = ["Vegetarian", "Vegan", "Pescatarian", "Halal", "Gluten-Free", "Diabetic",  "Milk Allergy", "Nut Allergy", "Egg Emoji", "Soy Allergy"]
+        let restrictionNames = ["Vegetarian", "Vegan", "Pescatarian", "Halal", "Gluten-Free", "Diabetic"]
+        let allergyNames = ["Milk", "Nut", "Eggs", "Soy"]
         let preferenceArray = posts[row].preference.flatMap{Int(String($0))}
         
+        //start building the restriciton/allergy strings to display in posting alert
         var actualRestrictionsArr: [String] = []
-        actualRestrictionsArr.append("Restrictions:")
+        actualRestrictionsArr.append("\n\nRestrictions:")
+        var actualAllergyArr: [String] = []
+        actualAllergyArr.append("\n\nAllergies:")
+        
+        //add restr/allergy onto the strings
         for (index, element) in preferenceArray.enumerated() {
-            if(element == 1) {
+            if(element == 1 && index < 6) {
                 actualRestrictionsArr.append(restrictionNames[index])
             }
+            if(element == 1 && index >= 6) {
+                actualAllergyArr.append(allergyNames[index - 6])
+            }
+            
         }
         
-        var newMessage = actualRestrictionsArr.joined(separator: "\n- ")
+        // if there were no restrictions/allergies, dump the contents so we print nothing
+        var restrictionMessage = actualRestrictionsArr.joined(separator: "\n- ")
         if (actualRestrictionsArr.count == 1){
-            newMessage = ""
+            restrictionMessage = ""
         }
+        var allergyMessage = actualAllergyArr.joined(separator: "\n- ")
+        if (actualAllergyArr.count == 1){
+            allergyMessage = ""
+        }
+        
+        
         let alert = UIAlertController(title: "Posting by\n\(posts[row].fullName)\n(\(posts[row].email))",
-            message: "At a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes.\n" + newMessage + "\n" + posts[row].description,
+            message: "At a maximum distance of \(posts[row].distance)km\nEating for \(posts[row].time) more minutes." + restrictionMessage + allergyMessage + "\n\nDescription:" + posts[row].description,
             preferredStyle: UIAlertControllerStyle.alert)
         
         alert.addAction(UIAlertAction(title: "Message", style: .default, handler: {(Action) -> Void in
@@ -171,49 +189,55 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
         })
         let saveAction = Action.init(title:"Done", style: .default, handler: {(Action) -> Void in
             self.actionString = "Done"
-            
-            //creating the posting and formatting and such
-            let time = alert.textFields![0].text
-            userInfo.shared.ExpiryTime = Double(time!)!
-            let distance = alert.textFields![1].text
-            let date = Date()
-            let formatter = DateFormatter()
-            formatter.dateFormat = "eeee, h:mm a"
-            let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
-            let formattedNewDate = formatter.string(from: newDate!)
-            let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude, preference: userInfo.shared.preferenceString, description: userInfo.shared.description)
-            print(myPost)
-            userInfo.shared.LastPost = myPost
-            
-            //submitting the post
-            submitPost(post: myPost) {(result) in
-                switch result{
-                case .success(let posts):
-                    self.posts = posts
-                    userInfo.shared.ExpiryDate = Date()
-                    userInfo.shared.SavePost = posts
-                    DispatchQueue.main.async {
-                        self.tableView.reloadData()
-                    }
-                    print(posts)
-                    if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == userInfo.shared.email}){
-                        
-                    } else {
-                        let room  = rooms(roomName: userInfo.shared.email, roomId: userInfo.shared.fullName)
-                        roomManager.SharedInstance.roomList.insert(room, at: 0)
-                        let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomId)
-                        sendFriend(friend: friend){(error) in
-                            if let error = error{
-                                fatalError("error: \(error)")
+            if CLLocationManager.locationServicesEnabled(){
+                switch CLLocationManager.authorizationStatus(){
+                case .notDetermined, .restricted, .denied:
+                    let newAlert = UIAlertController(title: "No location", message: "You did not allow location services, this is important to the usage of the app. You can allow this in the app settings, then restart the app.", preferredStyle: .alert)
+                    self.present(newAlert, animated: true, completion: nil)
+                case .authorizedAlways, .authorizedWhenInUse:
+                    //creating the posting and formatting and such
+                    let time = alert.textFields![0].text
+                    userInfo.shared.ExpiryTime = Double(time!)!
+                    let distance = alert.textFields![1].text
+                    let date = Date()
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "eeee, h:mm a"
+                    let newDate = Calendar.current.date(byAdding: .minute, value: Int(time!)!, to: date)
+                    let formattedNewDate = formatter.string(from: newDate!)
+                    let myPost = Posting(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, date: formattedNewDate, time: Int(time!)!, distance: Int(distance!)!, latitude: self.userLocation.coordinate.latitude, longitude: self.userLocation.coordinate.longitude, preference: userInfo.shared.preferenceString, description: userInfo.shared.description)
+                    print(myPost)
+                    userInfo.shared.LastPost = myPost
+                    
+                    //submitting the post
+                    submitPost(post: myPost) {(result) in
+                        switch result{
+                        case .success(let posts):
+                            self.posts = posts
+                            userInfo.shared.ExpiryDate = Date()
+                            userInfo.shared.SavePost = posts
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
                             }
+                            print(posts)
+                            if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == userInfo.shared.email}){
+                                
+                            } else {
+                                let room  = rooms(roomName: userInfo.shared.email, roomId: userInfo.shared.fullName)
+                                roomManager.SharedInstance.roomList.insert(room, at: 0)
+                                let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomId)
+                                sendFriend(friend: friend){(error) in
+                                    if let error = error{
+                                        fatalError("error: \(error)")
+                                    }
+                                }
+                            }
+                            SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", userInfo.shared.email)
+                        case.failure(let error):
+                            fatalError("error: \(error)")
                         }
                     }
-                    SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", userInfo.shared.email)
-                case.failure(let error):
-                    fatalError("error: \(error)")
                 }
             }
-            
         })
         //disable saveaction until its only ints in the text dialogs
         saveAction.isEnabled = false
