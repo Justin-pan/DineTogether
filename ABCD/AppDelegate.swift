@@ -61,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     //This is where the user connects to the server using socket io
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        SocketIOManager.SharedInstance.defaultSocket.connect()
         //this is just to check whether or not the user disconnected without completely closing the app
         if userInfo.shared.fullName.isEmpty{
         }else{

@@ -26,6 +26,7 @@ struct Posting: Codable {
     let latitude: Double
     let longitude: Double
     let preference: String
+    let description: String
 }
 struct recievingFriend : Codable{
     let friendName : String
@@ -288,6 +289,52 @@ func updatePreference(user: User, completion: ((Error?) -> Void)?){
     }
     task.resume()
 }
+func updateDescription(user: User, completion: ((Error?) -> Void)?){
+    //Creating the url which will be used for the GET request
+    var urlComponents = URLComponents()
+    //request scheme
+    urlComponents.scheme = "https"
+    //request host
+    urlComponents.host = "radiant-lowlands-29508.herokuapp.com"
+    //request path
+    urlComponents.path = "/updateDescription/"
+    //create the url, guard used for maintainability, transfers program control out of scope if conditions not met
+    guard let url = urlComponents.url else { fatalError("Could not create URL from components") }
+    //create post request with the created url
+    var request = URLRequest(url: url)
+    //post http method
+    request.httpMethod = "POST"
+    //request headers
+    var headers = request.allHTTPHeaderFields ?? [:]
+    //header is Content-Type and application/json
+    headers["Content-Type"] = "application/json"
+    //the request made has these headers/
+    //these headers will let the server know that the request body is JSON encoded
+    request.allHTTPHeaderFields = headers
+    //instantiating the encoder
+    let encoder = JSONEncoder()
+    do{
+        let jsonData = try encoder.encode(user)
+        request.httpBody = jsonData
+        //set httprequest body
+        print("jsonData: ", String(data: request.httpBody!, encoding: .utf8) ?? "no body data")
+        
+    }catch{
+        completion?(error)
+    }
+    let config = URLSessionConfiguration.default
+    let session = URLSession(configuration: config)
+    //URL session data task with the request made
+    let task = session.dataTask(with: request){(responseData, response, responseError) in
+        DispatchQueue.main.async {
+            if let error = responseError {
+                completion?(error)
+            }
+        }
+    }
+    task.resume()
+}
+
 func sendFriend(friend: sendingFriend, completion : ((Error?) -> Void)?){
     //Creating the url which will be used for the GET request
     var urlComponents = URLComponents()

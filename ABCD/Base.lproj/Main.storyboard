@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Robotol-Black.ttf">
+            <string>Roboto-Black</string>
+        </array>
+        <array key="Robotol-Bold.ttf">
+            <string>Roboto-Bold</string>
+        </array>
         <array key="Robotol-Regular.ttf">
             <string>Roboto-Regular</string>
+        </array>
+        <array key="Robotol-Thin.ttf">
+            <string>Roboto-Thin</string>
         </array>
     </customFonts>
     <scenes>
@@ -295,22 +304,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clI-Ft-997">
-                                <rect key="frame" x="16" y="28" width="77.5" height="43"/>
+                                <rect key="frame" x="16" y="28" width="292" height="43"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="43" id="hvu-aX-aON"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Roboto-Black" family="Roboto" pointSize="32"/>
                                 <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dietary Restrictions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmI-Ru-HGh">
-                                <rect key="frame" x="16" y="79" width="150" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="79" width="343" height="29"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
                                 <color key="textColor" red="0.39215686274509803" green="0.39215686274509803" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43c-kF-cBZ">
-                                <rect key="frame" x="16" y="108" width="109" height="30"/>
+                                <rect key="frame" x="16" y="115.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Vegetarian">
                                     <color key="titleColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -319,7 +329,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORB-aZ-whE">
-                                <rect key="frame" x="250" y="108" width="109" height="30"/>
+                                <rect key="frame" x="250" y="115.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Pescatarian">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -328,7 +339,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z15-td-phG">
-                                <rect key="frame" x="133" y="108" width="109" height="30"/>
+                                <rect key="frame" x="133" y="115.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Vegan">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -337,7 +349,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2qz-4w-mzV">
-                                <rect key="frame" x="250" y="158" width="109" height="30"/>
+                                <rect key="frame" x="250" y="155.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Diabetic">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -346,7 +359,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="czn-Uj-GDs">
-                                <rect key="frame" x="16" y="158" width="109" height="30"/>
+                                <rect key="frame" x="16" y="155.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Halal">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -355,7 +369,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjb-yp-LRk">
-                                <rect key="frame" x="133" y="158" width="109" height="30"/>
+                                <rect key="frame" x="133" y="155.5" width="109" height="32"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="17"/>
                                 <state key="normal" title="Gluten-Free">
                                     <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -363,47 +378,141 @@
                                     <action selector="GlutenFreeEnabled:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="JUf-ku-SNO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdS-9b-8Ho">
+                                <rect key="frame" x="16" y="583" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="xzA-ji-CFi"/>
+                                </constraints>
+                                <state key="normal" title="Update Bio"/>
+                                <connections>
+                                    <action selector="updateBio:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="WRu-zV-0xf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JT6-O2-cq2">
+                                <rect key="frame" x="191.5" y="270" width="167.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xff-f3-cw5"/>
+                                </constraints>
+                                <state key="normal" title="Soy"/>
+                                <connections>
+                                    <action selector="soyEnabled:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="iHo-hV-l7v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8u2-hA-xSL">
+                                <rect key="frame" x="16" y="231.5" width="167.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Iqs-AW-BGv"/>
+                                </constraints>
+                                <state key="normal" title="Milk"/>
+                                <connections>
+                                    <action selector="milkEnabled:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="HgK-Am-gtP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-v9-O5g">
+                                <rect key="frame" x="16" y="269.5" width="167.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="87l-T7-ku9"/>
+                                </constraints>
+                                <state key="normal" title="Eggs"/>
+                                <connections>
+                                    <action selector="eggsEnabled:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="CWC-Cu-CEG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIc-y7-RMj">
+                                <rect key="frame" x="191.5" y="232" width="167.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Xgi-Kx-2oe"/>
+                                </constraints>
+                                <state key="normal" title="Nuts"/>
+                                <connections>
+                                    <action selector="nutsEnabled:" destination="qCU-9y-ZQZ" eventType="touchUpInside" id="aLM-va-df6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWP-3d-9fV">
+                                <rect key="frame" x="16" y="195" width="343" height="29"/>
+                                <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="24"/>
+                                <color key="textColor" red="0.3921568627" green="0.3921568627" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kG9-lO-4Ya">
+                                <rect key="frame" x="16" y="308" width="343" height="267"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Roboto-Thin" family="Roboto" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="2qz-4w-mzV" firstAttribute="leading" secondItem="rjb-yp-LRk" secondAttribute="trailing" constant="8" id="02P-ZD-grC"/>
+                            <constraint firstItem="pfM-v9-O5g" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="0fJ-oE-R3L"/>
                             <constraint firstItem="czn-Uj-GDs" firstAttribute="width" secondItem="43c-kF-cBZ" secondAttribute="width" id="1Vk-4K-TMA"/>
                             <constraint firstItem="ZmI-Ru-HGh" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="27M-In-ZZI"/>
+                            <constraint firstItem="kG9-lO-4Ya" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="28L-dj-7i3"/>
+                            <constraint firstItem="kG9-lO-4Ya" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="2Hg-qw-l1u"/>
+                            <constraint firstItem="RWP-3d-9fV" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="48H-Wu-XQJ"/>
                             <constraint firstItem="PNE-FO-PnN" firstAttribute="leading" secondItem="gaK-YH-vyW" secondAttribute="trailing" constant="8" id="5YO-Pb-Y3v"/>
                             <constraint firstItem="2qz-4w-mzV" firstAttribute="width" secondItem="43c-kF-cBZ" secondAttribute="width" id="6Nb-HV-If1"/>
-                            <constraint firstItem="czn-Uj-GDs" firstAttribute="top" secondItem="43c-kF-cBZ" secondAttribute="bottom" constant="20" id="79i-GI-ESP"/>
-                            <constraint firstItem="ORB-aZ-whE" firstAttribute="top" secondItem="28h-my-yOV" secondAttribute="bottom" constant="37" id="8Fk-g6-3PG"/>
+                            <constraint firstItem="czn-Uj-GDs" firstAttribute="top" secondItem="43c-kF-cBZ" secondAttribute="bottom" constant="8" id="79i-GI-ESP"/>
+                            <constraint firstItem="28h-my-yOV" firstAttribute="leading" secondItem="clI-Ft-997" secondAttribute="trailing" constant="8" id="7yX-uZ-Vk6"/>
+                            <constraint firstItem="ORB-aZ-whE" firstAttribute="top" secondItem="28h-my-yOV" secondAttribute="bottom" constant="44.5" id="8Fk-g6-3PG"/>
                             <constraint firstItem="28h-my-yOV" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="DTX-jW-H0v"/>
+                            <constraint firstItem="kIc-y7-RMj" firstAttribute="height" secondItem="8u2-hA-xSL" secondAttribute="height" id="DcE-qx-eQM"/>
                             <constraint firstItem="czn-Uj-GDs" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="DtL-kf-39H"/>
+                            <constraint firstItem="GdS-9b-8Ho" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="EEo-4T-c4q"/>
+                            <constraint firstItem="8u2-hA-xSL" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="Eug-SD-eTp"/>
+                            <constraint firstItem="JT6-O2-cq2" firstAttribute="top" secondItem="kIc-y7-RMj" secondAttribute="bottom" constant="8" id="Gd1-W1-2la"/>
                             <constraint firstItem="gaK-YH-vyW" firstAttribute="height" secondItem="cyn-SS-oWK" secondAttribute="height" id="Hmc-uc-Dwj"/>
                             <constraint firstItem="gaK-YH-vyW" firstAttribute="leading" secondItem="cyn-SS-oWK" secondAttribute="trailing" constant="8" id="IAN-Gi-88K"/>
+                            <constraint firstItem="kG9-lO-4Ya" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="ICj-aT-m8g"/>
+                            <constraint firstItem="ZmI-Ru-HGh" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="IZl-jC-jwF"/>
+                            <constraint firstItem="JT6-O2-cq2" firstAttribute="width" secondItem="8u2-hA-xSL" secondAttribute="width" id="J2b-0Y-wGF"/>
+                            <constraint firstItem="cyn-SS-oWK" firstAttribute="top" secondItem="GdS-9b-8Ho" secondAttribute="bottom" constant="8" id="Kvo-vq-PyP"/>
+                            <constraint firstItem="JT6-O2-cq2" firstAttribute="leading" secondItem="pfM-v9-O5g" secondAttribute="trailing" constant="8" id="MQp-Vk-aB0"/>
                             <constraint firstItem="clI-Ft-997" firstAttribute="top" secondItem="uQV-Mp-ceP" secondAttribute="bottom" constant="8" id="NIY-8w-w49"/>
                             <constraint firstItem="Fgh-im-VJH" firstAttribute="top" secondItem="PNE-FO-PnN" secondAttribute="bottom" constant="16" id="NZ2-rR-Ibm"/>
                             <constraint firstItem="PNE-FO-PnN" firstAttribute="width" secondItem="cyn-SS-oWK" secondAttribute="width" id="OGq-bU-keq"/>
                             <constraint firstItem="clI-Ft-997" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="OJx-2C-Cxg"/>
+                            <constraint firstItem="pfM-v9-O5g" firstAttribute="width" secondItem="8u2-hA-xSL" secondAttribute="width" id="PTB-nh-9ZA"/>
                             <constraint firstItem="43c-kF-cBZ" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="RI9-ms-Ckw"/>
+                            <constraint firstItem="JT6-O2-cq2" firstAttribute="height" secondItem="8u2-hA-xSL" secondAttribute="height" id="SRw-PK-Sfx"/>
                             <constraint firstItem="ZmI-Ru-HGh" firstAttribute="top" secondItem="clI-Ft-997" secondAttribute="bottom" constant="8" id="Svv-l2-E24"/>
                             <constraint firstItem="28h-my-yOV" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="TVg-oA-a6M"/>
                             <constraint firstItem="43c-kF-cBZ" firstAttribute="top" secondItem="ZmI-Ru-HGh" secondAttribute="bottom" constant="8" id="TfJ-Yn-huj"/>
                             <constraint firstItem="gaK-YH-vyW" firstAttribute="width" secondItem="cyn-SS-oWK" secondAttribute="width" id="UWQ-Sn-2Nq"/>
                             <constraint firstItem="Fgh-im-VJH" firstAttribute="top" secondItem="cyn-SS-oWK" secondAttribute="bottom" constant="16" id="Vgq-ic-Ff6"/>
+                            <constraint firstItem="RWP-3d-9fV" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="WID-do-mne"/>
                             <constraint firstItem="rjb-yp-LRk" firstAttribute="width" secondItem="43c-kF-cBZ" secondAttribute="width" id="b5x-dy-rYo"/>
+                            <constraint firstItem="pfM-v9-O5g" firstAttribute="top" secondItem="8u2-hA-xSL" secondAttribute="bottom" constant="8" id="bSk-tM-z3J"/>
                             <constraint firstItem="Z15-td-phG" firstAttribute="width" secondItem="43c-kF-cBZ" secondAttribute="width" id="cus-LW-qx2"/>
                             <constraint firstItem="cyn-SS-oWK" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="d7d-S8-YAd"/>
                             <constraint firstItem="2qz-4w-mzV" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="f1N-E8-FpU"/>
+                            <constraint firstItem="GdS-9b-8Ho" firstAttribute="top" secondItem="kG9-lO-4Ya" secondAttribute="bottom" constant="8" id="fzQ-4c-AQt"/>
                             <constraint firstItem="Fgh-im-VJH" firstAttribute="top" secondItem="gaK-YH-vyW" secondAttribute="bottom" constant="16" id="gaa-8H-HHE"/>
+                            <constraint firstItem="RWP-3d-9fV" firstAttribute="top" secondItem="czn-Uj-GDs" secondAttribute="bottom" constant="8" id="h30-RU-AD1"/>
                             <constraint firstItem="28h-my-yOV" firstAttribute="top" secondItem="uQV-Mp-ceP" secondAttribute="bottom" constant="8" id="hiX-hK-TBX"/>
+                            <constraint firstItem="JT6-O2-cq2" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="i07-7l-72Q"/>
+                            <constraint firstItem="8u2-hA-xSL" firstAttribute="top" secondItem="RWP-3d-9fV" secondAttribute="bottom" constant="8" id="iQR-TV-AlQ"/>
                             <constraint firstItem="Z15-td-phG" firstAttribute="top" secondItem="ZmI-Ru-HGh" secondAttribute="bottom" constant="8" id="k4E-hs-opi"/>
                             <constraint firstItem="43c-kF-cBZ" firstAttribute="top" secondItem="ZmI-Ru-HGh" secondAttribute="bottom" constant="8" id="lV6-HM-LJU"/>
-                            <constraint firstItem="2qz-4w-mzV" firstAttribute="top" secondItem="ORB-aZ-whE" secondAttribute="bottom" constant="20" id="pwR-hF-kRd"/>
+                            <constraint firstItem="kG9-lO-4Ya" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="lpk-GX-GQo"/>
+                            <constraint firstItem="8u2-hA-xSL" firstAttribute="top" secondItem="RWP-3d-9fV" secondAttribute="bottom" constant="8" id="nFX-MK-duH"/>
+                            <constraint firstItem="kIc-y7-RMj" firstAttribute="leading" secondItem="8u2-hA-xSL" secondAttribute="trailing" constant="8" id="pMN-Ke-l6J"/>
+                            <constraint firstItem="kIc-y7-RMj" firstAttribute="top" secondItem="rjb-yp-LRk" secondAttribute="bottom" constant="44.5" id="pgl-KS-94L"/>
+                            <constraint firstItem="2qz-4w-mzV" firstAttribute="top" secondItem="ORB-aZ-whE" secondAttribute="bottom" constant="8" id="pwR-hF-kRd"/>
+                            <constraint firstItem="kIc-y7-RMj" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="s7H-lF-xZ6"/>
                             <constraint firstItem="PNE-FO-PnN" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="t5t-pt-LB8"/>
                             <constraint firstItem="Z15-td-phG" firstAttribute="leading" secondItem="43c-kF-cBZ" secondAttribute="trailing" constant="8" id="uhy-I4-Z75"/>
                             <constraint firstItem="PNE-FO-PnN" firstAttribute="height" secondItem="cyn-SS-oWK" secondAttribute="height" id="uxa-6d-jj7"/>
+                            <constraint firstItem="GdS-9b-8Ho" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="v1l-Z2-T3E"/>
                             <constraint firstItem="ORB-aZ-whE" firstAttribute="trailing" secondItem="aGM-uq-NdG" secondAttribute="trailingMargin" id="vb0-rr-9Eo"/>
+                            <constraint firstItem="kIc-y7-RMj" firstAttribute="width" secondItem="8u2-hA-xSL" secondAttribute="width" id="wbL-IJ-bpM"/>
+                            <constraint firstItem="kG9-lO-4Ya" firstAttribute="top" secondItem="JT6-O2-cq2" secondAttribute="bottom" constant="8" id="y60-L5-Ifp"/>
                             <constraint firstItem="clI-Ft-997" firstAttribute="leading" secondItem="aGM-uq-NdG" secondAttribute="leadingMargin" id="yJE-we-dfJ"/>
                             <constraint firstItem="ORB-aZ-whE" firstAttribute="leading" secondItem="Z15-td-phG" secondAttribute="trailing" constant="8" id="yKb-8O-ywr"/>
-                            <constraint firstItem="rjb-yp-LRk" firstAttribute="top" secondItem="Z15-td-phG" secondAttribute="bottom" constant="20" id="zWT-8r-1Et"/>
+                            <constraint firstItem="pfM-v9-O5g" firstAttribute="height" secondItem="8u2-hA-xSL" secondAttribute="height" id="yYe-gX-gO7"/>
+                            <constraint firstItem="rjb-yp-LRk" firstAttribute="top" secondItem="Z15-td-phG" secondAttribute="bottom" constant="8" id="zWT-8r-1Et"/>
                             <constraint firstItem="ORB-aZ-whE" firstAttribute="width" secondItem="43c-kF-cBZ" secondAttribute="width" id="zmE-fW-q1h"/>
                             <constraint firstItem="rjb-yp-LRk" firstAttribute="leading" secondItem="czn-Uj-GDs" secondAttribute="trailing" constant="8" id="znY-xZ-dTq"/>
                         </constraints>
@@ -417,8 +526,14 @@
                         <outlet property="DiabeticButton" destination="2qz-4w-mzV" id="fnD-j0-BYn"/>
                         <outlet property="GlutenFreeButton" destination="rjb-yp-LRk" id="A6X-YN-Wzs"/>
                         <outlet property="SignOutButton" destination="28h-my-yOV" id="K3U-oK-RZM"/>
+                        <outlet property="bioButton" destination="GdS-9b-8Ho" id="63G-49-8Sx"/>
+                        <outlet property="bioText" destination="kG9-lO-4Ya" id="wr2-lG-xUF"/>
+                        <outlet property="eggsButton" destination="pfM-v9-O5g" id="9CA-QI-brs"/>
                         <outlet property="halalButton" destination="czn-Uj-GDs" id="6md-Wj-xBv"/>
+                        <outlet property="milkButton" destination="8u2-hA-xSL" id="X1h-RI-sIf"/>
+                        <outlet property="nutsButton" destination="kIc-y7-RMj" id="tTg-YZ-EI2"/>
                         <outlet property="pescatarianButton" destination="ORB-aZ-whE" id="Nja-Ef-lXn"/>
+                        <outlet property="soyButton" destination="JT6-O2-cq2" id="lVP-U5-rXU"/>
                         <outlet property="userName" destination="clI-Ft-997" id="oSf-nB-tr4"/>
                         <outlet property="veganButton" destination="Z15-td-phG" id="nk6-sW-TzM"/>
                         <outlet property="vegetarianButton" destination="43c-kF-cBZ" id="EYz-je-lS2"/>
@@ -630,7 +745,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="udQ-8f-G03"/>
-        <segue reference="JMI-mi-uJ8"/>
+        <segue reference="6mG-rD-rwz"/>
         <segue reference="Jmx-cQ-dSl"/>
     </inferredMetricsTieBreakers>
 </document>

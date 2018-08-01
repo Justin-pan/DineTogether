@@ -22,7 +22,7 @@ class userInfo {
     var ExpiryDate = Date()
     var SavePost : [Posting] = []
     var ExpiryTime : Double = -1
-    var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0, preference: "")
+    var LastPost : Posting = Posting(_id: "potato",email: "",fullName: "",date: "",time: 0,distance: 0,latitude: 0,longitude: 0, preference: "", description: "")
     var description : String = ""
     var savedpreferences : [Int] = []
     var preferenceString: String = ""
@@ -83,6 +83,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
             userInfo.shared.givenName = user.profile.givenName
             userInfo.shared.familyName = user.profile.familyName
             userInfo.shared.email = user.profile.email
+            SocketIOManager.SharedInstance.defaultSocket.connect()
             let user = User(_id: "", email: userInfo.shared.email, fullName: userInfo.shared.fullName, description: "", preference: "0000000000")
             signInUser(user: user){(result) in
                 switch result{
@@ -90,6 +91,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                     self.preferenceString = userSign.preference
                     userInfo.shared.preferenceString = self.preferenceString
                     userInfo.shared.savedpreferences = self.preferenceString.flatMap{Int(String($0))}
+                    userInfo.shared.description = userSign.description
                     print("When does this happen")
                     getFriends(user: user){(result) in
                         switch result{

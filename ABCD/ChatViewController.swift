@@ -9,7 +9,7 @@
 import Foundation
 import MessageKit
 
-class ChatViewController: MessagesViewController{
+class ChatViewController: MessagesViewController, UIBarPositioningDelegate{
     //View Controller for messaging system
     //properties are all used for creating message objects and naming the room
     var messageList: [Message] = []
@@ -47,27 +47,27 @@ class ChatViewController: MessagesViewController{
         scrollsToBottomOnKeybordBeginsEditing = true
         maintainPositionOnKeyboardFrameChanged = true
         //creating the navigation bar that will have the room title
-        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
-        navigationBar.barTintColor = UIColor.lightGray
+        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 20, width: UIScreen.main.bounds.width, height: 50))
+        navigationBar.barTintColor = UIColor.white
         let button = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.plain, target: self, action: #selector(goBackToParent(_:)))
         let navigationItem = UINavigationItem(title: roomId + "'s room")
         navigationItem.leftBarButtonItem = button
         navigationBar.items = [navigationItem]
-        //self.view.addSubview(navigationBar)
-        /*if SYSTEM_VERSION_LESS_THAN(version: "11.0") {
-         self.messagesCollectionView.contentInset = UIEdgeInsetsMake(59, 0, 0, 10)
+        if SYSTEM_LESS_THAN_VERSION(version: "11.0") {
+            self.messagesCollectionView.contentInset = UIEdgeInsetsMake(59, 0, 0, 10)
          } else {
-         self.messagesCollectionView.contentInset = UIEdgeInsetsMake(10, 0, 0, 10)
-         }*/
+            self.messagesCollectionView.contentInset = UIEdgeInsetsMake(35, 0, 0, 10)
+         }
+        self.view.addSubview(navigationBar)
         addSocketHandlers()
     }
     //This handles the offset of the navigation bar, only handled in versions higher than 11.0
-    /*func SYSTEM_LESS_THAN_VERSION(version: String) -> Bool{
+    func SYSTEM_LESS_THAN_VERSION(version: String) -> Bool{
         return UIDevice.current.systemVersion.compare(
             version,
             options: NSString.CompareOptions.numeric
         ) == ComparisonResult.orderedAscending
-    }*/
+    }
     //button function that handles going back to parent view controller
     @objc func goBackToParent(_ sender: UIBarButtonItem!){
         self.view.removeFromSuperview()
@@ -101,6 +101,9 @@ class ChatViewController: MessagesViewController{
                 }
             }
         }
+    }
+    func position(for bar: UIBarPositioning) -> UIBarPosition {
+        return .topAttached
     }
 }
 //UI functions that handle the display of the message
