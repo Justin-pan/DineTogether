@@ -8,7 +8,7 @@
 
 import Foundation
 import SocketIO
-
+//global socket manager to help with handlers across the entire app
 class SocketIOManager{
     static let SharedInstance = SocketIOManager()
     var socket: SocketManager

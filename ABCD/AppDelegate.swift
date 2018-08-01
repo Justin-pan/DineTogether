@@ -58,15 +58,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
         
     }
-
+    //This is where the user connects to the server using socket io
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         SocketIOManager.SharedInstance.defaultSocket.connect()
+        //this is just to check whether or not the user disconnected without completely closing the app
         if userInfo.shared.fullName.isEmpty{
-            
         }else{
+            //emit a reconnect event if this is true
             SocketIOManager.SharedInstance.defaultSocket.emit("reconnect", userInfo.shared.fullName)
         }
+        //This is a handler for messages to accept messages everywhere on the app, without having to be in the message view controller
         SocketIOManager.SharedInstance.defaultSocket.on("message"){[weak self] data, ack in
             print("Is this happening?")
             if let room = roomManager.SharedInstance.roomList.first(where: {$0.roomName == data[0] as? String}){
@@ -86,6 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         GIDSignIn.sharedInstance().signOut()
+        //disconnect on signout
         SocketIOManager.SharedInstance.defaultSocket.disconnect()
     }
 

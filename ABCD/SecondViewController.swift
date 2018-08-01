@@ -19,7 +19,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell = tableView.dequeueReusableCell(withIdentifier: textCellIdentifier, for: indexPath)
         
         let row = indexPath.row
-        cell.textLabel?.text = roomManager.SharedInstance.roomList[row].roomName + "'s room"
+        cell.textLabel?.text = roomManager.SharedInstance.roomList[row].roomId + "'s room"
         
         return cell
     }
@@ -30,6 +30,7 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         SocketIOManager.SharedInstance.defaultSocket.emit("joinRoom", roomManager.SharedInstance.roomList[row].roomName)
         let childVC:ChatViewController = ChatViewController()
         childVC.roomName = roomManager.SharedInstance.roomList[row].roomName
+        childVC.roomId = roomManager.SharedInstance.roomList[row].roomId
         self.addChildViewController(childVC)
         self.view.addSubview(childVC.view)
         childVC.didMove(toParentViewController: self)

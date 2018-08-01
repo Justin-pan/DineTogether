@@ -88,6 +88,8 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                 switch result{
                 case .success(let userSign):
                     self.preferenceString = userSign.preference
+                    userInfo.shared.preferenceString = self.preferenceString
+                    userInfo.shared.savedpreferences = self.preferenceString.flatMap{Int(String($0))}
                     print("When does this happen")
                     getFriends(user: user){(result) in
                         switch result{
@@ -95,7 +97,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                             for item in friends{
                                 if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == item.friendName}){
                                 } else {
-                                    let room  = rooms(roomName: item.friendName)
+                                    let room  = rooms(roomName: item.friendName, roomId: item.friendId)
                                     roomManager.SharedInstance.roomList.append(room)
                                 }
                             }
@@ -103,16 +105,12 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                             fatalError("error: \(error)")
                         }
                     }
-                    self.SignInButton.setTitle("Proceed",for: .normal)
+                    //self.SignInButton.setTitle("Proceed",for: .normal)
                     
                 case .failure(let error):
                     fatalError("error: \(error.localizedDescription)")
                 }
-            }
-            SocketIOManager.SharedInstance.defaultSocket.emit("signIn", userInfo.shared.fullName)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
-                userInfo.shared.preferenceString = self.preferenceString
-                userInfo.shared.savedpreferences = self.preferenceString.flatMap{Int(String($0))}
+                SocketIOManager.SharedInstance.defaultSocket.emit("signIn", userInfo.shared.fullName)
                 self.performSegue(withIdentifier: "ThirdViewController", sender: self)
             }
         } else {

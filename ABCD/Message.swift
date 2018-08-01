@@ -8,7 +8,7 @@
 
 import Foundation
 import MessageKit
-
+//Message struct for initializing new messages
 struct Message: MessageType {
     var messageId: String
     var sender: Sender

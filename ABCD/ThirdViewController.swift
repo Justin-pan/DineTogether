@@ -24,48 +24,61 @@ class ThirdViewController: UIViewController,SFSafariViewControllerDelegate {
     var preference: [Int] = [0,0,0,0,0,0,0,0,0,0]
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         preference = userInfo.shared.savedpreferences
-        print("\(preference)")
         // Do any additional setup after loading the view, typically from a nib.
         userName.text = userInfo.shared.fullName
         if preference[0] == 1 {
-            
             vegetarianButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             vegetarianButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            preference[0] = 0
+            vegetarianButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            vegetarianButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
         if preference[1] == 1 {
-            
             veganButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             veganButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            veganButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            veganButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
         if preference[2] == 1 {
-            
             pescatarianButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             pescatarianButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            pescatarianButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            pescatarianButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
         if preference[3] == 1 {
-            
             halalButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             halalButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            halalButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            halalButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
         if preference[4] == 1 {
-            
             GlutenFreeButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             GlutenFreeButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            GlutenFreeButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            GlutenFreeButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
         if preference[5] == 1 {
-            
             DiabeticButton.setTitleColor(UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1), for: .normal)
             DiabeticButton.backgroundColor = UIColor(red:0,green:122/255,blue:1,alpha: 1)
             
+        }else{
+            DiabeticButton.setTitleColor(UIColor(red:0,green:122/255,blue:1,alpha: 1), for: .normal)
+            DiabeticButton.backgroundColor = UIColor(red:255/255,green:255/255,blue:255/255,alpha: 1)
         }
-        
-        
     }
     
     override func didReceiveMemoryWarning() {

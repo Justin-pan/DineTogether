@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 class SegueFromRight: UIStoryboardSegue {
+    //this is just to handle right swiping
     override func perform() {
         let src = self.source
         let dst = self.destination

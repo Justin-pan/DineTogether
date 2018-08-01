@@ -12,14 +12,13 @@ class graphViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //hours for graph view
         let hours = ["12:00am","","","3:00am","","","6:00am","","","9:00am","","","12:00pm","","","3:00pm","","","6:00pm","","","9:00pm","",""]
+        //getting data from server related to when users like to make posts
         getGraph(){(result) in
             DispatchQueue.main.async {
                 switch result{
                 case .success(let freq):
-                    
-                    
                     self.setChart(dataPoints: hours,values: freq)
                 case .failure(let error):
                     print(error)

@@ -133,10 +133,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == self.posts[row].email}){
                 
             }else{
-                let room = rooms(roomName: self.posts[row].email)
+                let room = rooms(roomName: self.posts[row].email, roomId: self.posts[row].fullName)
                 roomManager.SharedInstance.roomList.append(room)
                 //room should have another name for appearance purposes todo
-                let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomName)
+                let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomId)
                 sendFriend(friend: friend){(error) in
                     if let error = error{
                         fatalError("error: \(error)")
@@ -145,6 +145,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
             }
             let childVC:ChatViewController = ChatViewController()
             childVC.roomName = self.posts[row].email
+            childVC.roomId = self.posts[row].fullName
             self.addChildViewController(childVC)
             self.view.addSubview(childVC.view)
             childVC.didMove(toParentViewController: self)
@@ -195,9 +196,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate, UITextFi
                     if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == userInfo.shared.email}){
                         
                     } else {
-                        let room  = rooms(roomName: userInfo.shared.email)
+                        let room  = rooms(roomName: userInfo.shared.email, roomId: userInfo.shared.fullName)
                         roomManager.SharedInstance.roomList.insert(room, at: 0)
-                        let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomName)
+                        let friend = sendingFriend(userId: userInfo.shared.email, friendName: room.roomName, friendId: room.roomId)
                         sendFriend(friend: friend){(error) in
                             if let error = error{
                                 fatalError("error: \(error)")
