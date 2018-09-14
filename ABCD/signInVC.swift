@@ -96,6 +96,7 @@ class ViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate, 
                     getFriends(user: user){(result) in
                         switch result{
                         case .success(let friends):
+                            roomManager.SharedInstance.roomList.removeAll()
                             for item in friends{
                                 if roomManager.SharedInstance.roomList.contains(where: {$0.roomName == item.friendName}){
                                 } else {
